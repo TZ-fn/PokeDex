@@ -9,8 +9,53 @@ sans-serif,
 "Segoe UI Emoji",
 "Segoe UI Symbol";
 $primary-color: #171717;
+$text-color: #e6e6e6;
 
 body {
   background-color: $primary-color;
+  color: $text-color;
   font-family: $font-stack;
+}
+
+.container {
+  margin: auto;
+  max-width: 80%;
+}
+
+.header {
+  margin: auto;
+  text-align: center;
+
+  &__logo {
+    margin: auto;
+  }
+}
+
+.controls {
+  display: grid;
+  grid-template: 1fr repeat(2 1fr);
+
+  &__button,
+  &__input {
+
+    margin: 0 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  &__button {
+    grid-area: 2 2 1 1;
+  }
+
+  &__input {
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 1 1 1;
+    width: 400px;
+  }
+}
+
+.results {
+  &__button {
+    padding: 0.5rem 2rem;
+  }
 }
