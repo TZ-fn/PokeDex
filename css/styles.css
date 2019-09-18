@@ -4,6 +4,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+button,
+input {
+  margin: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
+}
+
 .container {
   margin: auto;
   max-width: 80%;
@@ -18,34 +24,38 @@ body {
   margin: auto;
 }
 
-.controls {
-  display: -ms-grid;
-  display: grid;
-  grid-template: 1fr repeat(2 1fr);
-}
-
-.controls__button, .controls__input {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 0 1rem;
-  padding: 0.5rem 0.5rem;
-}
-
-.controls__button {
-  grid-area: 2 2 1 1;
+.header__text {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .controls__input {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  grid-area: 1 1 1 1;
-  width: 400px;
+  display: block;
+  margin: auto;
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+  width: 385px;
 }
 
-.results__button {
+.control-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.results-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.results-controls__button {
   padding: 0.5rem 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

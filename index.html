@@ -21,17 +21,21 @@
 
     <div class="controls">
       <input type="search" class="controls__input" placeholder="Search Pokemon by name or number">
-      <button class="controls__button">Random Pokemon</button>
-      <button class="controls__button">10 random Pokemons</button>
-      <button class="controls__button">Favourite Pokemons ♥</button>
-      <button class="controls__button">Pokemons list</button>
+      <div class="control-buttons">
+        <button class="control-buttons__button">Random Pokemon</button>
+        <button class="control-buttons__button">10 random Pokemons</button>
+        <button class="control-buttons__button">Favourite Pokemons ♥</button>
+        <button class="control-buttons__button">Pokemons list</button>
+      </div>
     </div>
 
-    <div class="results">
-      <button class="results__button">Prev</button>
-      <button class="results__button">Next</button>
+    <div class="results" id="result">
     </div>
 
+    <div class="results-controls">
+      <button class="results-controls__button">Prev</button>
+      <button class="results-controls__button">Next</button>
+    </div>
   </div>
   <script src="./js/index.js"></script>
 </body>

@@ -17,6 +17,12 @@ body {
   font-family: $font-stack;
 }
 
+button,
+input {
+  margin: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
+}
+
 .container {
   margin: auto;
   max-width: 80%;
@@ -29,32 +35,31 @@ body {
   &__logo {
     margin: auto;
   }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 .controls {
-  display: grid;
-  grid-template: 1fr repeat(2 1fr);
-
-  &__button,
   &__input {
-
-    margin: 0 1rem;
-    padding: 0.5rem 0.5rem;
-  }
-
-  &__button {
-    grid-area: 2 2 1 1;
-  }
-
-  &__input {
-    align-self: center;
-    justify-self: center;
-    grid-area: 1 1 1 1;
-    width: 400px;
+    display: block;
+    margin: auto;
+    transform: translateX(15px);
+    width: 385px;
   }
 }
 
-.results {
+.control-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.results-controls {
+  display: flex;
+  justify-content: center;
+
   &__button {
     padding: 0.5rem 2rem;
   }
