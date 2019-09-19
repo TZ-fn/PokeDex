@@ -20,21 +20,34 @@
     </div>
 
     <div class="controls">
-      <input type="search" class="controls__input" placeholder="Search Pokemon by name or number">
+      <input type="search" class="controls__input" placeholder="Search Pokemon by name or number" id="searchBar">
       <div class="control-buttons">
-        <button class="control-buttons__button">Random Pokemon</button>
-        <button class="control-buttons__button">10 random Pokemons</button>
-        <button class="control-buttons__button">Favourite Pokemons ♥</button>
-        <button class="control-buttons__button">Pokemons list</button>
+        <button class="control-buttons__button" id="rndPkmnBtn">Random Pokemon</button>
+        <button class="control-buttons__button" id="tenRndmPkmBtn">10 random Pokemons</button>
+        <button class="control-buttons__button" id="favPkmnsBtn">Favourite Pokemons ♥</button>
+        <button class="control-buttons__button" id="pkmnListBtn">Pokemons list</button>
       </div>
     </div>
 
     <div class="results" id="result">
+
+      <div class="pokemon-box">
+        <svg width="24" height="24" class="pokemon-box__star" xmlns='http://www.w3.org/2000/svg'>
+          <path />
+        </svg>
+        <img src="" alt="" class="pokemon-box__image">
+        <p class="pokemon-box__name"></p>
+        <p class="pokemon-box__number"></p>
+        <p class="pokemon-box__type"></p>
+        <div class="pokemon-box__evolutions"></div>
+        <div class="pokemon-box__stats"></div>
+      </div>
+
     </div>
 
     <div class="results-controls">
-      <button class="results-controls__button">Prev</button>
-      <button class="results-controls__button">Next</button>
+      <button class="results-controls__button" id="prevBtn">Prev</button>
+      <button class="results-controls__button" id="nextBtn">Next</button>
     </div>
   </div>
   <script src="./js/index.js"></script>

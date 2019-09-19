@@ -32,8 +32,6 @@ input {
 .controls__input {
   display: block;
   margin: auto;
-  -webkit-transform: translateX(15px);
-          transform: translateX(15px);
   width: 385px;
 }
 
@@ -44,6 +42,13 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.pokemon-box__star:hover path {
+  stroke: yellow;
+  fill: yellow;
 }
 
 .results-controls {
