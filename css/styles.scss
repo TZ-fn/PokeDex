@@ -56,10 +56,44 @@ input {
   transform: translateX(-15px);
 }
 
-.pokemon-box__star:hover {
-  path {
-    stroke: yellow;
+
+.pokemon-box {
+  border: 1px solid white;
+  height: 400px;
+  min-width: 300px;
+  margin: 1em;
+
+  &__star {
+    position: relative;
+    top: -105px;
+    left: 88%;
+
+    &:hover {
+      path {
+        fill: yellow;
+        stroke: yellow;
+      }
+    }
   }
+
+  &__image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    left: 40px;
+  }
+
+  &>p {
+    text-align: center;
+  }
+}
+
+
+.results {
+  max-width: 100%;
+  display: flex;
+  flex-flow: row;
+  border: 1px solid white;
 }
 
 .results-controls {
