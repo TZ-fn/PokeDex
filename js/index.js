@@ -1,7 +1,12 @@
+import {
+  pkmnCard
+} from './pkmnCard.js';
+
 window.onload = () => {
 
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
-  const tenRndmPokemonBtn = document.querySelector('#tenRndmPkmBtn');
+  const eightRndmPokemonBtn = document.querySelector('#eightRndmPkmBtn');
+  const results = document.querySelector('#results');
   const randomPokemonNumber = () => Math.floor(Math.random() * (808 - 1)) + 1;
 
   const getPokemon = (pokemonNumber, howManyOfPokemons) => {
@@ -14,9 +19,10 @@ window.onload = () => {
 
   randomPokemonBtn.addEventListener('click', () => {
     getPokemon(randomPokemonNumber, 1);
+    results.innerHTML += pkmnCard;
   });
 
-  tenRndmPokemonBtn.addEventListener('click', () => {
-    getPokemon(randomPokemonNumber, 10);
+  eightRndmPokemonBtn.addEventListener('click', () => {
+    getPokemon(randomPokemonNumber, 8);
   });
 };

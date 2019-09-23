@@ -12,7 +12,7 @@ input {
 
 .container {
   margin: auto;
-  max-width: 80%;
+  max-width: 75%;
 }
 
 .header {
@@ -76,15 +76,20 @@ input {
 }
 
 .results {
-  max-width: 100%;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  border: 1px solid white;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100%;
 }
 
 .results-controls {

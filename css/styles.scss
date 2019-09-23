@@ -25,7 +25,7 @@ input {
 
 .container {
   margin: auto;
-  max-width: 80%;
+  max-width: 75%;
 }
 
 .header {
@@ -90,10 +90,12 @@ input {
 
 
 .results {
-  max-width: 100%;
-  display: flex;
-  flex-flow: row;
   border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 }
 
 .results-controls {
