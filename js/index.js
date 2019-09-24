@@ -1,6 +1,6 @@
 import {
-  pkmnCard
-} from './pkmnCard.js';
+  renderPkmnCard
+} from './renderPkmnCard.js';
 
 window.onload = () => {
 
@@ -13,13 +13,14 @@ window.onload = () => {
     for (let i = 0; i < howManyOfPokemons; i++) {
       fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
         .then(result => result.json())
-        .then(result => console.log(result.name, result.order));
+        .then(pokemon => {
+          results.innerHTML += renderPkmnCard(pokemon);
+        });
     }
   };
 
   randomPokemonBtn.addEventListener('click', () => {
     getPokemon(randomPokemonNumber, 1);
-    results.innerHTML += pkmnCard;
   });
 
   eightRndmPokemonBtn.addEventListener('click', () => {

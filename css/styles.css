@@ -55,7 +55,7 @@ input {
 
 .pokemon-box__star {
   position: relative;
-  top: -105px;
+  margin-top: 5px;
   left: 88%;
 }
 
