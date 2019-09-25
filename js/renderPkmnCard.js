@@ -1,8 +1,9 @@
 export const renderPkmnCard = (pokemon) => {
 
+  //filter is needed, because Pokemons can have 1 or 2 types, span is added to change type-badge appearance
   const extractPkmnTypes = pokemon => {
     let types = pokemon.types.filter(type => type !== undefined);
-    return `${types.map(typeSlot => `<span class="pokemon-box__type-${typeSlot.type.name}"> ${typeSlot.type.name.toUpperCase()}</span>`)}`;
+    return `${types.map(typeSlot => `<span class="pokemon-box__type-badge pokemon-box__type-badge-${typeSlot.type.name}">${typeSlot.type.name.toUpperCase()}</span>`).join(' ')}`;
   };
 
   return `<div class="pokemon-box">
@@ -12,7 +13,7 @@ export const renderPkmnCard = (pokemon) => {
         <img src="${pokemon.sprites.front_default}" alt = "${pokemon.name}'s picture" class="pokemon-box__image">
         <p class="pokemon-box__name">${pokemon.name}</p>
         <p class="pokemon-box__number">#${pokemon.id}</p>
-        <p class="pokemon-box__type"> Types: ${extractPkmnTypes(pokemon)}</p>
+        <p class="pokemon-box__type">${extractPkmnTypes(pokemon)}</p>
         <div class="pokemon-box__evolutions">${'lorem'}</div>
         <div class="pokemon-box__stats">${'lorem'}</div>
         </div>
