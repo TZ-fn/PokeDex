@@ -7,6 +7,7 @@ window.onload = () => {
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
   const eightRndmPokemonBtn = document.querySelector('#eightRndmPkmBtn');
   const results = document.querySelector('#results');
+
   const randomPokemonNumber = () => Math.floor(Math.random() * (808 - 1)) + 1;
 
   const getPokemon = (pokemonNumber, howManyOfPokemons) => {
