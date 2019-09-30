@@ -9,7 +9,24 @@ export const getPokemonEvolutions = pokemonID => {
       fetch(`${evolutionChainURL}`)
         .then(response => response.json())
         .then(response => {
-          console.log(response.chain.species, response.chain.evolves_to[0].species, response.chain.evolves_to[0].evolves_to[0].species);
+          let evolutions = [];
+          evolutions.push(response.chain.species);
+          if (response.chain.evolves_to[0] !== undefined) {
+            evolutions.push(response.chain.evolves_to[0].species);
+          }
+          if (response.chain.evolves_to[0] !== undefined && response.chain.evolves_to[0].evolves_to[0] !== undefined) {
+            evolutions.push(response.chain.evolves_to[0].evolves_to[0].species);
+          }
+          console.log(evolutions)
+          evolutions.filter(pokemon => pokemon)
+          evolutions.map(evolution => {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${evolution.name}/`)
+              .then(response => response.json())
+              .then(response => {
+                return `Evolutions: <img src="${response.sprites.front_default}">`;
+              });
+          });
+
         });
     });
 };

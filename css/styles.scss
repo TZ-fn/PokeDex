@@ -74,9 +74,10 @@ input {
   min-width: 300px;
 
   &__star {
-    position: relative;
+    position: float;
+    float: right;
     margin-top: 5px;
-    left: 88%;
+    padding: 0;
 
     &:hover {
       path {
@@ -87,10 +88,10 @@ input {
   }
 
   &__image {
-    position: relative;
+    display: block;
+    margin: 0 70px 0 80px;
     height: 150px;
     width: 150px;
-    left: 40px;
   }
 
   &>p {
