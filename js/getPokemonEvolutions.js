@@ -17,13 +17,14 @@ export const getPokemonEvolutions = pokemonID => {
           }
           //this function fetches images of each form and renders them in the Pokemon box
           // evolutions.filter(pokemon => pokemon);
-          return evolutions.map(evolution => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
-              .then(response => response.json())
-              .then(response => {
-                return `Evolutions: <img src="${response.sprites.front_default}">`;
-              });
-          });
+          return evolutions;
+          // .map(evolution => {
+          //   fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
+          //     .then(response => response.json())
+          //     .then(response => {
+          //       return `Evolutions: <img src="${response.sprites.front_default}">`;
+          //     });
+          // });
         });
     });
 };
