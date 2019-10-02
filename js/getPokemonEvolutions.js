@@ -1,32 +1,29 @@
 export const getPokemonEvolutions = pokemonID => {
-  //Pokemons have evolution chains, unfortunately, the ID of chain differs from the Pokemon ID
-  let evolutionChainURL = '';
+  //Pokemons have evolution chains, unfortunately, the ID of  the chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
     .then(response => response.json())
     .then(response => {
-      return evolutionChainURL = response.evolution_chain.url;
-    }).then(_ => {
-      fetch(`${evolutionChainURL}`)
+      return fetch(`${response.evolution_chain.url}`)
         .then(response => response.json())
         .then(response => {
           let evolutions = [];
-          evolutions.push(response.chain.species);
+          //Pokemon have up to 3 forms in a evolution chain, this function extracts name of each form of the Pokemon
+          evolutions.push(response.chain.species.name);
           if (response.chain.evolves_to[0] !== undefined) {
-            evolutions.push(response.chain.evolves_to[0].species);
+            evolutions.push(response.chain.evolves_to[0].species.name);
           }
           if (response.chain.evolves_to[0] !== undefined && response.chain.evolves_to[0].evolves_to[0] !== undefined) {
-            evolutions.push(response.chain.evolves_to[0].evolves_to[0].species);
+            evolutions.push(response.chain.evolves_to[0].evolves_to[0].species.name);
           }
-          console.log(evolutions)
-          evolutions.filter(pokemon => pokemon)
-          evolutions.map(evolution => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${evolution.name}/`)
+          //this function fetches images of each form and renders them in the Pokemon box
+          // evolutions.filter(pokemon => pokemon);
+          return evolutions.map(evolution => {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
               .then(response => response.json())
               .then(response => {
                 return `Evolutions: <img src="${response.sprites.front_default}">`;
               });
           });
-
         });
     });
 };
