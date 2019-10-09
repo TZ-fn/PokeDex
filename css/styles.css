@@ -170,6 +170,10 @@ input:hover {
   min-width: 300px;
 }
 
+.pokemon-box__name {
+  font-size: 1.5rem;
+}
+
 .pokemon-box__star {
   position: float;
   float: right;
@@ -192,6 +196,17 @@ input:hover {
 .pokemon-box > p {
   margin: 3px;
   text-align: center;
+}
+
+.pokemon-box__evolutions {
+  height: 75px;
+  line-height: 75px;
+}
+
+.pokemon-box__evolutions > img {
+  display: inline;
+  height: 75px;
+  width: 75px;
 }
 
 .results-controls {

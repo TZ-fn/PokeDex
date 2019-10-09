@@ -73,6 +73,10 @@ input {
   margin: 1rem 0;
   min-width: 300px;
 
+  &__name {
+    font-size: 1.5rem;
+  }
+
   &__star {
     position: float;
     float: right;
@@ -98,6 +102,18 @@ input {
     margin: 3px;
     text-align: center;
   }
+
+  &__evolutions {
+    height: 75px;
+    line-height: 75px;
+  }
+
+  &__evolutions>img {
+    display: inline;
+    height: 75px;
+    width: 75px;
+  }
+
 }
 
 .results-controls {
