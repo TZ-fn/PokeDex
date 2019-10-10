@@ -9,11 +9,6 @@ import {
 export const renderPkmnCard = pokemon => {
   return getPokemonEvolutions(pokemon.id, pokemon.name)
     .then(evolutions => {
-      // if (evolutions.length > 0) {
-      //   evolutions = evolutions.join(' ');
-      // } else {
-      //   evolutions = 'None';
-      // }
       const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
       //filter is needed, because Pokemons can have 1 or 2 types, span is added to change type-badge appearance
       const extractPkmnTypes = pokemon => {

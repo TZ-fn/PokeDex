@@ -46,7 +46,7 @@
           <span class="pokemon-box__type-badge pokemon-box__type-badge-electric">ELECTRIC</span>
         </p>
         <div class="pokemon-box__evolutions"></div>
-        <div class="pokemon-box__stats">box</div>
+        <div class="pokemon-box__stats"><canvas id="stats" width="200" height="200"></canvas></div>
       </div>
 
     </div>
@@ -56,11 +56,12 @@
       <button class="results-controls__button" id="nextBtn">Next</button>
     </div>
   </div>
-  <script type="module" src="./js/index.js"></script>
-  <script type="module" src="./js/renderPkmnCard.js"></script>
-  <script type="module" src="./js/getPokemonEvolutions.js"></script>
-  <script type="module" src="./js/getPokemon.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
   <script type="module" src="./js/helperFunctions.js"></script>
+  <script type="module" src="./js/getPokemonEvolutions.js"></script>
+  <script type="module" src="./js/renderPkmnCard.js"></script>
+  <script type="module" src="./js/getPokemon.js"></script>
+  <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
