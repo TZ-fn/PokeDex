@@ -2,7 +2,7 @@ import {
   capitalize
 } from './helperFunctions.js';
 
-export const getPokemonEvolutions = (pokemonID, pokemonName) => {
+export const getPokemonEvolutions = async (pokemonID, pokemonName) => {
   let evolutions = [];
   //Pokemons have evolution chains, unfortunately, the ID of the chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
@@ -20,13 +20,19 @@ export const getPokemonEvolutions = (pokemonID, pokemonName) => {
             evolutions.push(response.chain.evolves_to[0].evolves_to[0].species.name);
           }
         });
-    }).then(_ => {
+    }).then(async _ => {
       //remove current Pokemon from the list of evolutions and fetch images of evolutions and render them in the Pokemon box
-      evolutions = evolutions.filter(evolution => evolution !== pokemonName).map(evolution => {
-        return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
-          .then(response => response.json())
-          .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture">`);
-      });
-      return Promise.all(evolutions);
+      evolutions = evolutions.filter(evolution => evolution !== pokemonName);
+      if (evolutions.length > 0) {
+        evolutions = evolutions.map(evolution => {
+          return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
+            .then(response => response.json())
+            .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture" title="${capitalize(response.name)}">`);
+        });
+        evolutions = await Promise.all(evolutions)
+        return evolutions.join(' ');
+      } else {
+        return 'None';
+      }
     });
 };
