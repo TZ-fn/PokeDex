@@ -2,11 +2,20 @@ import {
   renderPkmnCard
 } from './renderPkmnCard.js';
 
-export const getPokemon = (pokemonNumber, howManyOfPokemons) => {
+import {
+  renderPokemonStats
+} from './renderPokemonStats.js';
+
+import {
+  getPokemonStats
+} from './getPokemonStats.js';
+
+export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
   for (let i = 0; i < howManyOfPokemons; i++) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
-      .then(result => result.json())
-      .then(pokemon => renderPkmnCard(pokemon))
-      .then(result => results.innerHTML += result);
+    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
+    const pokemon = await result.json()
+    console.log(getPokemonStats(pokemon.stats))
+    await renderPkmnCard(pokemon);
+    await renderPokemonStats(getPokemonStats(pokemon.stats));
   }
 };

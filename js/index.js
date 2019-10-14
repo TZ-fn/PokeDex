@@ -6,10 +6,6 @@ import {
   randomPokemonNumber
 } from './helperFunctions.js';
 
-import {
-  renderStats
-} from './renderPokemonStats.js';
-
 window.onload = () => {
 
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');

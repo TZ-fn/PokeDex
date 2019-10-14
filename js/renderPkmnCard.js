@@ -6,7 +6,7 @@ import {
   capitalize
 } from './helperFunctions.js';
 
-export const renderPkmnCard = pokemon => {
+export const renderPkmnCard = async pokemon => {
   return getPokemonEvolutions(pokemon.id, pokemon.name)
     .then(evolutions => {
       const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
@@ -25,7 +25,7 @@ export const renderPkmnCard = pokemon => {
         <p class="pokemon-box__number">#${pokemon.id}</p>
         <p class="pokemon-box__type">${extractPkmnTypes(pokemon)}</p>
         <div class="pokemon-box__evolutions">Evolutions: ${evolutions}</div>
-        <div class="pokemon-box__stats">Stats-box</div>
+        <div class="pokemon-box__stats"></div>
         </div>
         `;
     });
