@@ -21,7 +21,7 @@ export const getPokemonEvolutions = async (pokemonID, pokemonName) => {
           }
         });
     }).then(async _ => {
-      //remove current Pokemon from the list of evolutions and fetch images of evolutions and render them in the Pokemon box
+      //remove current Pokemon from the list of evolutions, fetch images of evolutions and render them in the Pokemon box
       evolutions = evolutions.filter(evolution => evolution !== pokemonName);
       if (evolutions.length > 0) {
         evolutions = evolutions.map(evolution => {

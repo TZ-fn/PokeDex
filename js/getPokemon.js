@@ -12,10 +12,14 @@ import {
 
 export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
   for (let i = 0; i < howManyOfPokemons; i++) {
-    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
-    const pokemon = await result.json()
-    console.log(getPokemonStats(pokemon.stats))
-    await renderPkmnCard(pokemon);
-    await renderPokemonStats(getPokemonStats(pokemon.stats));
+    try {
+      const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
+      const pokemon = await result.json()
+      const pkmnCard = await renderPkmnCard(pokemon);
+      results.innerHTML += pkmnCard;
+      renderPokemonStats(getPokemonStats(pokemon.stats), pokemon.name);
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
