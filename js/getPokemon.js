@@ -1,10 +1,10 @@
 import {
-  renderPkmnCard
-} from './renderPkmnCard.js';
+  createPkmnCard
+} from './createPkmnCard.js';
 
 import {
-  renderPokemonStats
-} from './renderPokemonStats.js';
+  createPkmnStatsGraph
+} from './createPkmnStatsGraph.js';
 
 import {
   getPokemonStats
@@ -15,11 +15,11 @@ export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
     try {
       const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
       const pokemon = await result.json()
-      const pkmnCard = await renderPkmnCard(pokemon);
-      results.appendChild(pkmnCard);
-      renderPokemonStats(getPokemonStats(pokemon.stats), pokemon.name);
+      const pkmnCard = await createPkmnCard(pokemon);
+      results.insertAdjacentHTML('beforeend', pkmnCard);
+      createPkmnStatsGraph(getPokemonStats(pokemon.stats), pokemon.name);
     } catch (error) {
-      console.log(error);
+      alert(`There was an error: ${error}`)
     }
   }
 };

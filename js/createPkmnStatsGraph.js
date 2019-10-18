@@ -6,7 +6,7 @@ import {
   getPokemonStats
 } from './getPokemonStats.js';
 
-export const renderPokemonStats = (stats, pkmnName) => {
+export const createPkmnStatsGraph = (stats, pkmnName) => {
   const statsBox = document.querySelector(`#${pkmnName}-stats`);
   return new Chart(statsBox, {
     type: 'radar',
@@ -15,7 +15,7 @@ export const renderPokemonStats = (stats, pkmnName) => {
       datasets: [{
         data: stats,
         backgroundColor: '#ffffffe5',
-        borderColor: '#fff',
+        borderColor: '#f05a4f',
         borderWidth: 2,
         pointBorderWidth: 3,
         pointBackgroundColor: '#f05a4f',
@@ -38,7 +38,7 @@ export const renderPokemonStats = (stats, pkmnName) => {
           display: false,
           beginAtZero: true,
           min: 0,
-          max: Math.max(135, Math.max(...stats)),
+          max: Math.max(Math.max(...stats) + 30),
           stepSize: 20
         },
         pointLabels: {

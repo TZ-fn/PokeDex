@@ -6,7 +6,7 @@ import {
   capitalize
 } from './helperFunctions.js';
 
-export const renderPkmnCard = pokemon => {
+export const createPkmnCard = pokemon => {
   return getPokemonEvolutions(pokemon.id, pokemon.name)
     .then(evolutions => {
       const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
@@ -15,8 +15,7 @@ export const renderPkmnCard = pokemon => {
         let types = pokemon.types.filter(type => type !== undefined);
         return `${types.map(typeSlot => `<span class="pokemon-box__type-badge pokemon-box__type-badge-${typeSlot.type.name}">${typeSlot.type.name.toUpperCase()}</span>`).join(' ')}`;
       };
-      const containerDiv = document.createElement('div');
-      containerDiv.innerHTML = `<div class="pokemon-box">
+      return `<div class="pokemon-box">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 -10 50 50" class="pokemon-box__star">
           <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z" stroke="white" stroke-width="2"/>
         </svg>
@@ -28,6 +27,5 @@ export const renderPkmnCard = pokemon => {
         <div class="pokemon-box__stats"><canvas id="${pokemon.name}-stats"></canvas></div>
         </div>
         `;
-      return containerDiv;
     });
 };
