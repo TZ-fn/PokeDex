@@ -6,7 +6,6 @@ import {
   getPokemonStats
 } from './getPokemonStats.js';
 
-
 export const renderPokemonStats = (stats, pkmnName) => {
   const statsBox = document.querySelector(`#${pkmnName}-stats`);
   return new Chart(statsBox, {

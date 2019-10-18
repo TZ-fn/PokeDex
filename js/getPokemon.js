@@ -16,7 +16,7 @@ export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
       const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
       const pokemon = await result.json()
       const pkmnCard = await renderPkmnCard(pokemon);
-      results.innerHTML += pkmnCard;
+      results.appendChild(pkmnCard);
       renderPokemonStats(getPokemonStats(pokemon.stats), pokemon.name);
     } catch (error) {
       console.log(error);

@@ -7,7 +7,7 @@ import {
 } from './helperFunctions.js';
 
 window.onload = () => {
-
+  window.charts = {};
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
   const eightRndmPokemonBtn = document.querySelector('#eightRndmPkmBtn');
   const results = document.querySelector('#results');
