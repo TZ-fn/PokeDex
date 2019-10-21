@@ -16,7 +16,7 @@ input {
   padding: 1rem 1rem;
 
   &:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     transition-duration: 0.2s;
     background-color: lighten($lighter-primary-color, 5%);
   }
