@@ -14,12 +14,12 @@ input {
   color: $text-color;
   margin: 1rem 1rem;
   padding: 1rem 1rem;
+}
 
-  &:hover {
-    transform: scale(1.01);
-    transition-duration: 0.2s;
-    background-color: lighten($lighter-primary-color, 5%);
-  }
+button:hover {
+  transform: scale(1.01);
+  transition-duration: 0.2s;
+  background-color: lighten($lighter-primary-color, 5%);
 }
 
 .container {

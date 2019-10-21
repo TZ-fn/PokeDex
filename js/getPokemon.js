@@ -13,13 +13,20 @@ import {
 export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
   for (let i = 0; i < howManyOfPokemons; i++) {
     try {
-      const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`)
+      //if Pokemon number should be random call the pokemonNumber function, else use given number
+      let result;
+      if (typeof pokemonNumber === 'function') {
+        result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`);
+      } else {
+        result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`);
+      }
       const pokemon = await result.json()
       const pkmnCard = await createPkmnCard(pokemon);
       results.insertAdjacentHTML('beforeend', pkmnCard);
       createPkmnStatsGraph(getPokemonStats(pokemon.stats), pokemon.name);
     } catch (error) {
-      alert(`There was an error: ${error}`)
+      console.log(error)
+      alert(`There was an error, please try again.`)
     }
   }
 };

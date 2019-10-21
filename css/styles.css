@@ -97,10 +97,9 @@ input {
   padding: 1rem 1rem;
 }
 
-button:hover,
-input:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+button:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   background-color: #3d3d3d;
