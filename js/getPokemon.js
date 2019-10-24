@@ -13,7 +13,7 @@ import {
 export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
   for (let i = 0; i < howManyOfPokemons; i++) {
     try {
-      //if Pokemon number should be random call the pokemonNumber function, else use given number
+      //if Pokemon number should be random, call the pokemonNumber function, else use given number
       let result;
       if (typeof pokemonNumber === 'function') {
         result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber()}/`);

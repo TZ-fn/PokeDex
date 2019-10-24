@@ -2,10 +2,6 @@ import {
   getPokemonEvolutions
 } from './getPokemonEvolutions.js';
 
-import {
-  capitalize
-} from './helperFunctions.js';
-
 export const createPkmnCard = pokemon => {
   return getPokemonEvolutions(pokemon.id, pokemon.name)
     .then(evolutions => {
