@@ -2,7 +2,7 @@ import {
   capitalize
 } from './helperFunctions.js';
 
-export const getPokemonEvolutions = async (pokemonID, pokemonName) => {
+export const getPokemonEvolutions = (pokemonID, pokemonName) => {
   let evolutions = [];
   //Pokemons have evolution chains, unfortunately, the ID of the chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)

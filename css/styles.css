@@ -116,6 +116,7 @@ button:hover {
 }
 
 .header__logo {
+  width: 150px;
   margin: auto;
 }
 
@@ -159,6 +160,7 @@ button:hover {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   max-width: 100%;
+  min-height: 500px;
 }
 
 .pokemon-box {

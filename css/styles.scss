@@ -32,6 +32,7 @@ button:hover {
   text-align: center;
 
   &__logo {
+    width: 150px;
     margin: auto;
   }
 
@@ -64,6 +65,7 @@ button:hover {
   align-content: flex-start;
   justify-content: space-evenly;
   max-width: 100%;
+  min-height: 500px;
 }
 
 .pokemon-box {

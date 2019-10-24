@@ -9,19 +9,23 @@ import {
 window.onload = () => {
   const searchBar = document.querySelector('#searchBar');
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
-  const eightRndmPokemonBtn = document.querySelector('#eightRndmPkmBtn');
+  const fourRndmPokemonBtn = document.querySelector('#fourRndmPkmBtn');
   const results = document.querySelector('#results');
 
   searchBar.addEventListener('search', (e) => {
-    results.innerHTML = '';
-    getPokemon(e.target.value, 1);
+    if (e.target.value) {
+      results.innerHTML = '';
+      getPokemon((e.target.value).toLowerCase(), 1);
+    }
   });
 
   randomPokemonBtn.addEventListener('click', () => {
+    results.innerHTML = '';
     getPokemon(randomPokemonNumber, 1);
   });
 
-  eightRndmPokemonBtn.addEventListener('click', () => {
-    getPokemon(randomPokemonNumber, 8);
+  fourRndmPokemonBtn.addEventListener('click', () => {
+    results.innerHTML = '';
+    getPokemon(randomPokemonNumber, 4);
   });
 };
