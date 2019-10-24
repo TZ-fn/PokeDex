@@ -12,9 +12,9 @@ export const createPkmnCard = pokemon => {
         return `${types.map(typeSlot => `<span class="pokemon-box__type-badge pokemon-box__type-badge-${typeSlot.type.name}">${typeSlot.type.name.toUpperCase()}</span>`).join(' ')}`;
       };
       return `<div class="pokemon-box">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 -10 50 50" class="pokemon-box__star">
-          <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z" stroke="white" stroke-width="2"/>
-        </svg>
+        <button class="pokemon-box__star-button" aria-label="Add this Pokemon to favorites." id="${pokemon.name}"><svg viewBox="-2 -2 55 51" class="pokemon-box__star">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" stroke="white" stroke-width="3"/>
+        </svg></button>
         <img src="${pokemon.sprites.front_default}" alt="${capitalize(pokemon.name)}'s picture" class="pokemon-box__image">
         <p class="pokemon-box__name">${capitalize(pokemon.name)}</p>
         <p class="pokemon-box__number">#${pokemon.id}</p>

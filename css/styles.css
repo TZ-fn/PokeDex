@@ -177,15 +177,29 @@ button:hover {
 }
 
 .pokemon-box__star {
-  position: float;
-  float: right;
-  margin-top: 5px;
   padding: 0;
 }
 
-.pokemon-box__star:hover path {
+.pokemon-box path:hover {
   fill: yellow;
   stroke: yellow;
+}
+
+.pokemon-box__star-button {
+  border: none;
+  position: float;
+  float: right;
+  padding: 0;
+  margin: 5px 5px 0 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+
+.pokemon-box__star-button:hover {
+  background-color: transparent;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .pokemon-box__image {

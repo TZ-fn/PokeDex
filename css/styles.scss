@@ -81,16 +81,27 @@ button:hover {
   }
 
   &__star {
+    padding: 0;
+  }
+
+  path:hover {
+    fill: yellow;
+    stroke: yellow;
+  }
+
+  &__star-button {
+    border: none;
     position: float;
     float: right;
-    margin-top: 5px;
     padding: 0;
+    margin: 5px 5px 0 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
 
     &:hover {
-      path {
-        fill: yellow;
-        stroke: yellow;
-      }
+      background-color: transparent;
+      transform: none;
     }
   }
 
