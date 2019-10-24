@@ -1,11 +1,3 @@
-import {
-  getPokemon
-} from './getPokemon.js';
-
-import {
-  getPokemonStats
-} from './getPokemonStats.js';
-
 export const createPkmnStatsGraph = (stats, pkmnName) => {
   const statsBox = document.querySelector(`#${pkmnName}-stats`);
   return new Chart(statsBox, {
