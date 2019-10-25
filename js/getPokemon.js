@@ -24,6 +24,11 @@ export const getPokemon = async (pokemonNumber, howManyOfPokemons) => {
       const pkmnCard = await createPkmnCard(pokemon);
       results.insertAdjacentHTML('beforeend', pkmnCard);
       createPkmnStatsGraph(getPokemonStats(pokemon.stats), pokemon.name);
+      [...document.querySelectorAll('.pokemon-box__star-button')].forEach(button => {
+        button.addEventListener('click', (e) => {
+          console.log(e.target)
+        })
+      })
     } catch (error) {
       console.log(error)
       alert(`There was an error, please try again.`)
