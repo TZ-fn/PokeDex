@@ -11,6 +11,8 @@ window.onload = () => {
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
   const fourRndmPokemonBtn = document.querySelector('#fourRndmPkmBtn');
   const results = document.querySelector('#results');
+  const favoritePkmnsBtn = document.querySelector('#favPkmnsBtn');
+  localStorage.favoritePokemons = JSON.stringify([]);
 
   searchBar.addEventListener('search', (e) => {
     if (e.target.value) {
@@ -27,5 +29,9 @@ window.onload = () => {
   fourRndmPokemonBtn.addEventListener('click', () => {
     results.innerHTML = '';
     getPokemon(randomPokemonNumber, 4);
+  });
+
+  favoritePkmnsBtn.addEventListener('click', () => {
+    console.log(JSON.parse(localStorage.favoritePokemons))
   });
 };
