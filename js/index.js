@@ -32,6 +32,6 @@ window.onload = () => {
   });
 
   favoritePkmnsBtn.addEventListener('click', () => {
-    console.log(JSON.parse(localStorage.favoritePokemons))
+    console.log(JSON.parse(localStorage.favoritePokemons));
   });
 };

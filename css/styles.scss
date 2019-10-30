@@ -57,6 +57,7 @@ button:hover {
 }
 
 .results {
+  margin: auto;
   background-color: lighten($primary-color, 1%);
   border: 1px solid black;
   display: flex;
@@ -64,15 +65,18 @@ button:hover {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: space-evenly;
+  min-width: 334px;
+  width: max-content;
   max-width: 100%;
   min-height: 500px;
+  padding: 0.5rem 1rem;
 }
 
 .pokemon-box {
   background-color: $primary-color;
   border: 1px solid black;
   height: 460px;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   min-width: 300px;
   max-width: 300px;
 
