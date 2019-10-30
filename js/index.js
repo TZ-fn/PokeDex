@@ -17,21 +17,21 @@ window.onload = () => {
   searchBar.addEventListener('search', (e) => {
     if (e.target.value) {
       results.innerHTML = '';
-      getPokemon((e.target.value).toLowerCase(), 1);
+      getPokemon([(e.target.value).toLowerCase()]);
     }
   });
 
   randomPokemonBtn.addEventListener('click', () => {
     results.innerHTML = '';
-    getPokemon(randomPokemonNumber, 1);
+    getPokemon(randomPokemonNumber(1));
   });
 
   fourRndmPokemonBtn.addEventListener('click', () => {
     results.innerHTML = '';
-    getPokemon(randomPokemonNumber, 4);
+    getPokemon(randomPokemonNumber(4));
   });
 
   favoritePkmnsBtn.addEventListener('click', () => {
-    console.log(JSON.parse(localStorage.favoritePokemons));
+    getPokemon(JSON.parse(localStorage.favoritePokemons));
   });
 };
