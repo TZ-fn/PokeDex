@@ -2,6 +2,10 @@ import {
   getPokemonEvolutions
 } from './getPokemonEvolutions.js';
 
+import {
+  isPkmnInFavorites
+} from './helperFunctions.js';
+
 export const createPkmnCard = pokemon => {
   return getPokemonEvolutions(pokemon.id, pokemon.name)
     .then(evolutions => {
@@ -12,8 +16,8 @@ export const createPkmnCard = pokemon => {
         return `${types.map(typeSlot => `<span class="pokemon-box__type-badge pokemon-box__type-badge-${typeSlot.type.name}">${typeSlot.type.name.toUpperCase()}</span>`).join(' ')}`;
       };
       return `<div class="pokemon-box">
-        <button class="pokemon-box__star-button" aria-label="Add this Pokemon to favorites." id="${pokemon.name}">
-          <svg viewBox="-2 -2 55 51" aria-hidden="true" class="pokemon-box__star">
+        <button class="pokemon-box__star-button${isPkmnInFavorites(pokemon.name)?' pokemon-box__star-button--active':''}" aria-label="Add this Pokemon to favorites." id="${pokemon.name}">
+          <svg viewBox="-2 -2 55 51" class="pokemon-box__star" aria-hidden="true" >
             <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" stroke="white" stroke-width="3"/>
           </svg>
         </button>

@@ -64,10 +64,10 @@ button:hover {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   min-width: 334px;
   width: max-content;
-  max-width: 100%;
+  max-width: 99%;
   min-height: 500px;
   padding: 0.5rem 1rem;
 }
@@ -88,12 +88,15 @@ button:hover {
     padding: 0;
   }
 
+
+
   path:hover {
     fill: yellow;
     stroke: yellow;
   }
 
-  &__star-button {
+  &__star-button,
+  &__star-button--active {
     border: none;
     position: float;
     float: right;
@@ -106,6 +109,13 @@ button:hover {
     &:hover {
       background-color: transparent;
       transform: none;
+    }
+
+    &--active {
+      svg>path {
+        fill: yellow;
+        stroke: yellow;
+      }
     }
   }
 

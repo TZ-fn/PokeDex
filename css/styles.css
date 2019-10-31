@@ -157,14 +157,14 @@ button:hover {
       flex-wrap: wrap;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   min-width: 334px;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  max-width: 100%;
+  max-width: 99%;
   min-height: 500px;
   padding: 0.5rem 1rem;
 }
@@ -191,7 +191,7 @@ button:hover {
   stroke: yellow;
 }
 
-.pokemon-box__star-button {
+.pokemon-box__star-button, .pokemon-box__star-button--active {
   border: none;
   position: float;
   float: right;
@@ -202,10 +202,15 @@ button:hover {
   background-color: transparent;
 }
 
-.pokemon-box__star-button:hover {
+.pokemon-box__star-button:hover, .pokemon-box__star-button--active:hover {
   background-color: transparent;
   -webkit-transform: none;
           transform: none;
+}
+
+.pokemon-box__star-button--active svg > path, .pokemon-box__star-button--active--active svg > path {
+  fill: yellow;
+  stroke: yellow;
 }
 
 .pokemon-box__image {

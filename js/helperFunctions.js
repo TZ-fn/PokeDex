@@ -7,4 +7,7 @@ export const randomPokemonNumber = (howManyPokemons) => {
   }
   return result;
 };
+
 export const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+export const isPkmnInFavorites = pkmnName => [...JSON.parse(localStorage.favoritePokemons)].includes(pkmnName);

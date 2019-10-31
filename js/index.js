@@ -32,6 +32,11 @@ window.onload = () => {
   });
 
   favoritePkmnsBtn.addEventListener('click', () => {
-    getPokemon(JSON.parse(localStorage.favoritePokemons));
+    if (JSON.parse(localStorage.favoritePokemons).length === 0) {
+      alert('No favorite Pokemons added!');
+    } else {
+      results.innerHTML = '';
+      getPokemon(JSON.parse(localStorage.favoritePokemons));
+    }
   });
 };
