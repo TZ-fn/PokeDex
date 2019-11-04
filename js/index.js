@@ -18,6 +18,7 @@ window.onload = () => {
     if (e.target.value) {
       results.innerHTML = '';
       getPokemon([(e.target.value).toLowerCase()]);
+      e.target.value = '';
     }
   });
 

@@ -30,7 +30,7 @@ export const createPkmnStatsGraph = (stats, pkmnName) => {
           display: false,
           beginAtZero: true,
           min: 0,
-          max: Math.max(Math.max(...stats) + 30),
+          max: Math.max(130, Math.max(...stats) + 20),
           stepSize: 20
         },
         pointLabels: {
