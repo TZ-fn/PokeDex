@@ -7,19 +7,20 @@ body {
   font-family: $font-stack;
 }
 
-button,
-input {
+.control-buttons__button,
+.results-controls__button,
+.search-form__button,
+.search-form__input {
   border: 1px solid black;
   background-color: $lighter-primary-color;
   color: $text-color;
-  margin: 1rem 1rem;
   padding: 1rem 1rem;
-}
 
-button:hover {
-  transform: scale(1.01);
-  transition-duration: 0.2s;
-  background-color: lighten($lighter-primary-color, 5%);
+  &:hover:not(input) {
+    transform: scale(1.01);
+    transition-duration: 0.2s;
+    background-color: lighten($lighter-primary-color, 5%);
+  }
 }
 
 .container {
@@ -42,17 +43,26 @@ button:hover {
   }
 }
 
-.controls {
+.search-form {
+  display: flex;
+  justify-content: center;
+
   &__input {
-    display: block;
-    margin: auto;
-    width: 385px;
+    border: none;
+    min-width: 320px;
+    max-width: 500px;
+  }
+
+  &__button {
+    border: none;
+    border-left: 1px solid black;
   }
 }
 
 .control-buttons {
   display: flex;
   justify-content: center;
+  margin: 1rem 1rem;
   transform: translateX(-15px);
 }
 
@@ -90,13 +100,7 @@ button:hover {
 
 
 
-  path:hover {
-    fill: yellow;
-    stroke: yellow;
-  }
-
-  &__star-button,
-  &__star-button--active {
+  &__star-button {
     border: none;
     position: float;
     float: right;
@@ -109,6 +113,11 @@ button:hover {
     &:hover {
       background-color: transparent;
       transform: none;
+    }
+
+    path:hover {
+      fill: yellow;
+      stroke: yellow;
     }
 
     &--active {

@@ -88,16 +88,20 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-button,
-input {
+.control-buttons__button,
+.results-controls__button,
+.search-form__button,
+.search-form__input {
   border: 1px solid black;
   background-color: #313131;
   color: #e6e6e6;
-  margin: 1rem 1rem;
   padding: 1rem 1rem;
 }
 
-button:hover {
+.control-buttons__button:hover:not(input),
+.results-controls__button:hover:not(input),
+.search-form__button:hover:not(input),
+.search-form__input:hover:not(input) {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   -webkit-transition-duration: 0.2s;
@@ -125,10 +129,24 @@ button:hover {
   margin-bottom: 1rem;
 }
 
-.controls__input {
-  display: block;
-  margin: auto;
-  width: 385px;
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-form__input {
+  border: none;
+  min-width: 320px;
+  max-width: 500px;
+}
+
+.search-form__button {
+  border: none;
+  border-left: 1px solid black;
 }
 
 .control-buttons {
@@ -138,6 +156,7 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 1rem 1rem;
   -webkit-transform: translateX(-15px);
           transform: translateX(-15px);
 }
@@ -186,12 +205,7 @@ button:hover {
   padding: 0;
 }
 
-.pokemon-box path:hover {
-  fill: yellow;
-  stroke: yellow;
-}
-
-.pokemon-box__star-button, .pokemon-box__star-button--active {
+.pokemon-box__star-button {
   border: none;
   position: float;
   float: right;
@@ -202,13 +216,18 @@ button:hover {
   background-color: transparent;
 }
 
-.pokemon-box__star-button:hover, .pokemon-box__star-button--active:hover {
+.pokemon-box__star-button:hover {
   background-color: transparent;
   -webkit-transform: none;
           transform: none;
 }
 
-.pokemon-box__star-button--active svg > path, .pokemon-box__star-button--active--active svg > path {
+.pokemon-box__star-button path:hover {
+  fill: yellow;
+  stroke: yellow;
+}
+
+.pokemon-box__star-button--active svg > path {
   fill: yellow;
   stroke: yellow;
 }
