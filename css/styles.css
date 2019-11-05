@@ -161,6 +161,10 @@ body {
           transform: translateX(-15px);
 }
 
+.control-buttons__button {
+  margin-right: 10px;
+}
+
 .results {
   margin: auto;
   background-color: #1a1a1a;

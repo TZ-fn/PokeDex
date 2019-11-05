@@ -6,20 +6,22 @@ import {
   randomPokemonNumber
 } from './helperFunctions.js';
 
+import {
+  searchPokemon
+} from './searchPokemon.js';
+
 window.onload = () => {
   const searchBar = document.querySelector('#searchBar');
   const randomPokemonBtn = document.querySelector('#rndPkmnBtn');
   const fourRndmPokemonBtn = document.querySelector('#fourRndmPkmBtn');
   const results = document.querySelector('#results');
   const favoritePkmnsBtn = document.querySelector('#favPkmnsBtn');
+  const searchBtn = document.querySelector('#searchBtn');
   localStorage.favoritePokemons = JSON.stringify([]);
 
-  searchBar.addEventListener('search', (e) => {
-    if (e.target.value) {
-      results.innerHTML = '';
-      getPokemon([(e.target.value).toLowerCase()]);
-      e.target.value = '';
-    }
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchPokemon(searchBar.value);
   });
 
   randomPokemonBtn.addEventListener('click', () => {

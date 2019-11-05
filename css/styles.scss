@@ -64,6 +64,10 @@ body {
   justify-content: center;
   margin: 1rem 1rem;
   transform: translateX(-15px);
+
+  &__button {
+    margin-right: 10px;
+  }
 }
 
 .results {
