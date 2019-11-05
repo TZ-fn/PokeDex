@@ -271,15 +271,20 @@ body {
 }
 
 .results-controls {
+  display: none;
+}
+
+.results-controls__button {
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.results-controls--active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.results-controls__button {
-  padding: 0.5rem 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

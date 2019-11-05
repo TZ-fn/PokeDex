@@ -163,10 +163,15 @@ body {
 }
 
 .results-controls {
-  display: flex;
-  justify-content: center;
+  display: none;
 
   &__button {
+    margin: 1rem;
     padding: 0.5rem 2rem;
+  }
+
+  &--active {
+    display: flex;
+    justify-content: center;
   }
 }
