@@ -14,7 +14,8 @@ body {
   border: 1px solid black;
   background-color: $lighter-primary-color;
   color: $text-color;
-  padding: 1rem 1rem;
+  max-width: 160px;
+  padding: 0.5rem;
 
   &:hover:not(input) {
     transform: scale(1.01);
@@ -50,7 +51,7 @@ body {
   &__input {
     border: none;
     min-width: 320px;
-    max-width: 500px;
+    max-width: 550px;
   }
 
   &__button {
@@ -63,10 +64,9 @@ body {
   display: flex;
   justify-content: center;
   margin: 1rem 1rem;
-  transform: translateX(-15px);
 
   &__button {
-    margin-right: 10px;
+    margin: 5px;
   }
 }
 
@@ -81,7 +81,7 @@ body {
   justify-content: flex-start;
   min-width: 334px;
   width: max-content;
-  max-width: 99%;
+  max-width: 92%;
   min-height: 500px;
   padding: 0.5rem 1rem;
 }
@@ -156,10 +156,6 @@ body {
     width: 75px;
   }
 
-}
-
-#stats {
-  background-color: #171717;
 }
 
 .results-controls {
