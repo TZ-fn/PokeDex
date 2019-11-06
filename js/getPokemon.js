@@ -15,6 +15,8 @@ import {
 } from './handleFavoritePkmns.js'
 
 export const getPokemon = async (pokemonsToFetch) => {
+  results.innerHTML = '';
+  resultControlsBtns.classList.remove('results-controls--active');
   for (let i = 0; i < pokemonsToFetch.length; i++) {
     try {
       const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonsToFetch[i]}/`);
