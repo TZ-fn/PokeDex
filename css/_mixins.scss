@@ -1,0 +1,18 @@
+@mixin button {
+  border: 1px solid black;
+  background-color: $lighter-primary-color;
+  color: $text-color;
+  max-width: 160px;
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+@mixin button-hover {
+  @include button;
+
+  &:hover {
+    transform: scale(1.01);
+    transition-duration: 0.2s;
+    background-color: lighten($lighter-primary-color, 5%);
+  }
+}

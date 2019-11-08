@@ -1,5 +1,6 @@
 @import "variables";
 @import "type-badges";
+@import "mixins";
 
 body {
   background-color: $primary-color;
@@ -10,18 +11,12 @@ body {
 .control-buttons__button,
 .results-controls__button,
 .search-form__button,
-.search-form__input {
-  border: 1px solid black;
-  background-color: $lighter-primary-color;
-  color: $text-color;
-  max-width: 160px;
-  padding: 0.5rem;
+.pokemon-modal__close-button {
+  @include button;
+}
 
-  &:hover:not(input) {
-    transform: scale(1.01);
-    transition-duration: 0.2s;
-    background-color: lighten($lighter-primary-color, 5%);
-  }
+.search-form__input {
+  @include button;
 }
 
 .container {
@@ -156,6 +151,38 @@ body {
     width: 75px;
   }
 
+}
+
+.pokemon-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(61, 61, 61, 0.815);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $primary-color;
+    padding: 1rem 1.5rem;
+    width: 30rem;
+    height: 45rem;
+    border-radius: 2px;
+    border: 1px solid black;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 70px 0 80px;
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .results-controls {
