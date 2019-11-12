@@ -100,6 +100,29 @@ body {
   border-radius: 2px;
 }
 
+.control-buttons__button:hover,
+.results-controls__button:hover,
+.search-form__button:hover,
+.pokemon-modal__close-button:hover {
+  border: 1px solid black;
+  background-color: #313131;
+  color: #e6e6e6;
+  max-width: 160px;
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+.control-buttons__button:hover:hover,
+.results-controls__button:hover:hover,
+.search-form__button:hover:hover,
+.pokemon-modal__close-button:hover:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  background-color: #3d3d3d;
+}
+
 .search-form__input {
   border: 1px solid black;
   background-color: #313131;
@@ -292,10 +315,33 @@ body {
 }
 
 .pokemon-modal__image {
+  clear: both;
+  margin: auto;
   display: block;
-  margin: 0 70px 0 80px;
-  height: 300px;
-  width: 300px;
+  height: 330px;
+  width: 330px;
+}
+
+.pokemon-modal p {
+  margin: 3px;
+  text-align: center;
+}
+
+.pokemon-modal__close-button {
+  padding: 0;
+  font-size: 18px;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  float: right;
+  top: -5px;
+  right: -12px;
+}
+
+.pokemon-modal__star-button {
+  position: relative;
+  top: 25px;
+  right: 20px;
 }
 
 .results-controls {

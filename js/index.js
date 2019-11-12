@@ -34,18 +34,18 @@ window.onload = () => {
   });
 
   randomPokemonBtn.addEventListener('click', () => {
-    getPokemon(randomPokemonNumber(1));
+    getPokemon(randomPokemonNumber(1), false);
   });
 
   fourRndmPokemonBtn.addEventListener('click', () => {
-    getPokemon(randomPokemonNumber(4));
+    getPokemon(randomPokemonNumber(4), false);
   });
 
   favoritePkmnsBtn.addEventListener('click', () => {
     if (JSON.parse(localStorage.favoritePokemons).length === 0) {
       alert('No favorite Pokemons added!');
     } else {
-      getPokemon(JSON.parse(localStorage.favoritePokemons));
+      getPokemon(JSON.parse(localStorage.favoritePokemons), false);
     }
   });
 

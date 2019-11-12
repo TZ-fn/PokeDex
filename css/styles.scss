@@ -13,6 +13,10 @@ body {
 .search-form__button,
 .pokemon-modal__close-button {
   @include button;
+
+  &:hover {
+    @include button-hover;
+  }
 }
 
 .search-form__input {
@@ -178,10 +182,33 @@ body {
   }
 
   &__image {
+    clear: both;
+    margin: auto;
     display: block;
-    margin: 0 70px 0 80px;
-    height: 300px;
-    width: 300px;
+    height: 330px;
+    width: 330px;
+  }
+
+  p {
+    margin: 3px;
+    text-align: center;
+  }
+
+  &__close-button {
+    padding: 0;
+    font-size: 18px;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    float: right;
+    top: -5px;
+    right: -12px;
+  }
+
+  &__star-button {
+    position: relative;
+    top: 25px;
+    right: 20px;
   }
 }
 

@@ -14,14 +14,14 @@ import {
   handleFavoritePkmns
 } from './handleFavoritePkmns.js'
 
-export const getPokemon = async (pokemonsToFetch) => {
+export const getPokemon = async (pokemonsToFetch, isInModal) => {
   results.innerHTML = '';
   resultControlsBtns.classList.remove('results-controls--active');
   for (let i = 0; i < pokemonsToFetch.length; i++) {
     try {
       const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonsToFetch[i]}/`);
       const pokemon = await result.json()
-      const pkmnCard = await createPkmnCard(pokemon);
+      const pkmnCard = await createPkmnCard(pokemon, isInModal);
       results.insertAdjacentHTML('beforeend', pkmnCard);
       createPkmnStatsGraph(getPokemonStats(pokemon.stats), pokemon.name);
     } catch (error) {
@@ -33,6 +33,18 @@ export const getPokemon = async (pokemonsToFetch) => {
     button.addEventListener('click', (e) => {
       handleFavoritePkmns(button);
       e.stopPropagation();
+    })
+  });
+  [...document.querySelectorAll('.pokemon-box')].forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.path.filter(element => {
+        console.log(element.classList)
+        if (element.classList !== undefined) {
+          if (element.classList.contains('pokemon-box')) {
+            return element.classList.value;
+          }
+        }
+      });
     })
   })
 };

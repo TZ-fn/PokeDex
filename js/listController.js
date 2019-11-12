@@ -16,7 +16,7 @@ export const listController = (directionOfBrowsing, listPosition) => {
     }
   });
   localStorage.listPosition = JSON.stringify(pokemonsToFetch);
-  getPokemon(pokemonsToFetch);
+  getPokemon(pokemonsToFetch, false);
   if (pokemonsToFetch[0] === 1) {
     listPrevBtn.style.display = 'none';
 
