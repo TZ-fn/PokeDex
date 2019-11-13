@@ -3,6 +3,7 @@ import {
 } from './getPokemon.js';
 
 export const listController = (directionOfBrowsing, listPosition) => {
+  results.innerHTML = '';
   const numberOfPokemonsToFetch = 8;
   const pokemonsToFetch = listPosition.map(pokemonIndex => {
     if (directionOfBrowsing === 'default') {

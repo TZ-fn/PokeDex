@@ -164,8 +164,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(61, 61, 61, 0.815);
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
   transform: scale(1.1);
 
   &__content {
@@ -176,12 +176,13 @@ body {
     background-color: $primary-color;
     padding: 1rem 1.5rem;
     width: 30rem;
-    height: 45rem;
+    height: 50rem;
     border-radius: 2px;
     border: 1px solid black;
   }
 
   &__image {
+    margin-top: 0;
     clear: both;
     margin: auto;
     display: block;

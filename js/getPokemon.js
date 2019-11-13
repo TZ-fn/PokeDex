@@ -15,7 +15,6 @@ import {
 } from './handleFavoritePkmns.js'
 
 export const getPokemon = async (pokemonsToFetch, isInModal) => {
-  results.innerHTML = '';
   resultControlsBtns.classList.remove('results-controls--active');
   for (let i = 0; i < pokemonsToFetch.length; i++) {
     try {
@@ -35,16 +34,14 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       e.stopPropagation();
     })
   });
-  [...document.querySelectorAll('.pokemon-box')].forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.path.filter(element => {
-        console.log(element.classList)
-        if (element.classList !== undefined) {
-          if (element.classList.contains('pokemon-box')) {
-            return element.classList.value;
-          }
-        }
-      });
-    })
-  })
+  [...document.querySelectorAll('.pokemon-box')].forEach(box => {
+    box.addEventListener('click', (e) => {
+      getPokemon([
+        [...e.currentTarget.classList][1]
+      ], true);
+    });
+  });
+  document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
+    document.querySelector('#pkmnModal').style.display = 'none';
+  });
 };
