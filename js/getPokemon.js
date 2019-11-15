@@ -35,13 +35,16 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
     })
   });
   [...document.querySelectorAll('.pokemon-box')].forEach(box => {
-    box.addEventListener('click', (e) => {
-      getPokemon([
-        [...e.currentTarget.classList][1]
-      ], true);
-    });
-  });
-  document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
-    document.querySelector('#pkmnModal').style.display = 'none';
+    if (!isInModal) {
+      box.addEventListener('click', async e => {
+        await getPokemon([
+          [...e.currentTarget.classList][1]
+        ], true);
+        document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
+          let modal = document.querySelector('#pkmnModal');
+          modal.parentNode.removeChild(modal);
+        });
+      });
+    }
   });
 };
