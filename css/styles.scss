@@ -70,6 +70,7 @@ body {
 }
 
 .results {
+  @include box-shadow;
   margin: auto;
   background-color: lighten($primary-color, 1%);
   border: 1px solid black;
@@ -114,7 +115,7 @@ body {
     position: float;
     float: right;
     padding: 0;
-    margin: 5px 5px 0 0;
+    margin: 12px 12px 0 0;
     width: 30px;
     height: 30px;
     background-color: transparent;
@@ -182,8 +183,8 @@ body {
     transform: translate(-50%, -50%);
     background-color: $primary-color;
     padding: 1rem 1.5rem;
-    width: 30rem;
-    height: 50rem;
+    min-width: 33%;
+    height: 80%;
     border-radius: 2px;
     @include shadow-transition;
 

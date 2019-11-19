@@ -175,6 +175,8 @@ body {
 }
 
 .results {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin: auto;
   background-color: #1a1a1a;
   border: 1px solid black;
@@ -232,7 +234,7 @@ body {
   position: float;
   float: right;
   padding: 0;
-  margin: 5px 5px 0 0;
+  margin: 12px 12px 0 0;
   width: 30px;
   height: 30px;
   background-color: transparent;
@@ -305,8 +307,8 @@ body {
           transform: translate(-50%, -50%);
   background-color: #171717;
   padding: 1rem 1.5rem;
-  width: 30rem;
-  height: 50rem;
+  min-width: 33%;
+  height: 80%;
   border-radius: 2px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
