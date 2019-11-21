@@ -98,6 +98,8 @@ body {
   max-width: 160px;
   padding: 10px;
   border-radius: 2px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .control-buttons__button:hover:hover,
@@ -118,6 +120,8 @@ body {
   max-width: 160px;
   padding: 10px;
   border-radius: 2px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .container {
@@ -281,7 +285,7 @@ body {
   height: 75px;
 }
 
-.pokemon-box__evolutions > img {
+.pokemon-box__evolutions-image {
   height: 75px;
   width: 75px;
 }

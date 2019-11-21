@@ -27,7 +27,7 @@ export const getPokemonEvolutions = (pokemonID, pokemonName) => {
         evolutions = evolutions.map(evolution => {
           return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
             .then(response => response.json())
-            .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture" title="${capitalize(response.name)}">`);
+            .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture" title="${capitalize(response.name)}"class="pokemon-box__evolutions-image">`);
         });
         evolutions = await Promise.all(evolutions)
         return evolutions.join(' ');

@@ -13,6 +13,7 @@ body {
 .search-form__button,
 .pokemon-modal__close-button {
   @include button;
+  @include box-shadow;
 
   &:hover {
     @include button-hover;
@@ -21,6 +22,7 @@ body {
 
 .search-form__input {
   @include button;
+  @include box-shadow-hover;
 }
 
 .container {
@@ -157,7 +159,7 @@ body {
     height: 75px;
   }
 
-  &__evolutions>img {
+  &__evolutions-image {
     height: 75px;
     width: 75px;
   }

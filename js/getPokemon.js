@@ -47,4 +47,10 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       });
     }
   });
+  [...document.querySelectorAll('.pokemon-box__evolutions-image')].forEach(evolutionImage => {
+    evolutionImage.addEventListener('click', (e) => {
+      let address = toString(e.currentTarget.src);
+      console.log(toString(e.currentTarget.src).substring(toString(e.currentTarget.src).length() - 3))
+    })
+  })
 };
