@@ -262,7 +262,7 @@ body {
 
 .pokemon-box__image {
   display: block;
-  margin: 0 70px 0 80px;
+  margin: 0 80px 0 80px;
   height: 150px;
   width: 150px;
 }
@@ -325,9 +325,9 @@ body {
 
 .pokemon-modal__image {
   display: block;
-  margin: -33px 150px 0 160px;
-  height: 330px;
-  width: 330px;
+  margin: -30px 160px 0 160px;
+  height: 305px;
+  width: 305px;
 }
 
 .pokemon-modal p {
@@ -360,6 +360,24 @@ body {
   position: relative;
   top: 25px;
   right: 20px;
+}
+
+.pokemon-modal__evolutions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+.pokemon-modal__evolutions-image {
+  height: 100px;
+  width: 100px;
 }
 
 .results-controls {

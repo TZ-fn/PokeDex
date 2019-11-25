@@ -142,7 +142,7 @@ body {
 
   &__image {
     display: block;
-    margin: 0 70px 0 80px;
+    margin: 0 80px 0 80px;
     height: 150px;
     width: 150px;
   }
@@ -197,9 +197,9 @@ body {
 
   &__image {
     display: block;
-    margin: -33px 150px 0 160px;
-    height: 330px;
-    width: 330px;
+    margin: -30px 160px 0 160px;
+    height: 305px;
+    width: 305px;
   }
 
   p {
@@ -232,6 +232,18 @@ body {
     position: relative;
     top: 25px;
     right: 20px;
+  }
+
+  &__evolutions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    &-image {
+      height: 100px;
+      width: 100px;
+    }
   }
 }
 

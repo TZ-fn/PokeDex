@@ -2,7 +2,7 @@ import {
   capitalize
 } from './helperFunctions.js';
 
-export const getPokemonEvolutions = (pokemonID, pokemonName) => {
+export const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
   let evolutions = [];
   //Pokemons have evolution chains, unfortunately, the ID of the chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
@@ -27,7 +27,7 @@ export const getPokemonEvolutions = (pokemonID, pokemonName) => {
         evolutions = evolutions.map(evolution => {
           return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)
             .then(response => response.json())
-            .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture" title="${capitalize(response.name)}"class="pokemon-box__evolutions-image">`);
+            .then(response => `<img src="${response.sprites.front_default}" alt="${capitalize(response.name)}'s Picture" title="${capitalize(response.name)}"class="pokemon-${isInModal ? 'modal': 'box'}__evolutions-image">`);
         });
         evolutions = await Promise.all(evolutions)
         return evolutions.join(' ');

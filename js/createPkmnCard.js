@@ -7,7 +7,7 @@ import {
 } from './helperFunctions.js';
 
 export const createPkmnCard = (pokemon, isInModal) => {
-  return getPokemonEvolutions(pokemon.id, pokemon.name)
+  return getPokemonEvolutions(pokemon.id, pokemon.name, isInModal)
     .then(evolutions => {
       const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
       //filter is needed, because Pokemons can have 1 or 2 types, span is added to change type-badge appearance
@@ -28,7 +28,7 @@ export const createPkmnCard = (pokemon, isInModal) => {
         <p class="pokemon-box__name">${capitalize(pokemon.name)}</p>
         <p class="pokemon-box__number">#${pokemon.id}</p>
         <p class="pokemon-box__type">${extractPkmnTypes(pokemon)}</p>
-        <div class="pokemon-box__evolutions">Evolutions: ${evolutions}</div>
+        <div class="pokemon-${isInModal ? 'modal':'box'}__evolutions">Evolutions: ${evolutions}</div>
         <div class="pokemon-box__stats"><canvas id="${pokemon.name}${isInModal ? '-modal': ''}-stats"></canvas></div>
         </div>
         ${isInModal ? '</div>':''}
