@@ -24,12 +24,12 @@ export const createPkmnCard = (pokemon, isInModal) => {
             <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" stroke="white" stroke-width="3"/>
           </svg>
         </button>
-        <img src="${pokemon.sprites.front_default}" alt="${capitalize(pokemon.name)}'s picture" class="${isInModal?'pokemon-modal__image' : 'pokemon-box__image'}">
+        <img src="${pokemon.sprites.front_default}" alt="${capitalize(pokemon.name)}'s picture" class="pokemon-${isInModal ? 'modal' : 'box'}__image">
         <p class="pokemon-box__name">${capitalize(pokemon.name)}</p>
         <p class="pokemon-box__number">#${pokemon.id}</p>
         <p class="pokemon-box__type">${extractPkmnTypes(pokemon)}</p>
         <div class="pokemon-box__evolutions">Evolutions: ${evolutions}</div>
-        <div class="pokemon-box__stats"><canvas id="${pokemon.name}-stats"></canvas></div>
+        <div class="pokemon-box__stats"><canvas id="${pokemon.name}${isInModal ? '-modal': ''}-stats"></canvas></div>
         </div>
         ${isInModal ? '</div>':''}
         `;

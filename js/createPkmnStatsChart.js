@@ -1,5 +1,5 @@
-export const createPkmnStatsGraph = (stats, pkmnName) => {
-  const statsBox = document.querySelector(`#${pkmnName}-stats`);
+export const createPkmnStatsChart = (stats, pkmnName, isInModal) => {
+  const statsBox = isInModal ? document.querySelector(`#${pkmnName}-modal-stats`) : document.querySelector(`#${pkmnName}-stats`);
   return new Chart(statsBox, {
     type: 'radar',
     data: {

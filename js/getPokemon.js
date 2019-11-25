@@ -3,8 +3,9 @@ import {
 } from './createPkmnCard.js';
 
 import {
-  createPkmnStatsGraph
-} from './createPkmnStatsGraph.js';
+  createPkmnStatsChart
+}
+from './createPkmnStatsChart.js';
 
 import {
   getPokemonStats
@@ -22,7 +23,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       const pokemon = await result.json()
       const pkmnCard = await createPkmnCard(pokemon, isInModal);
       results.insertAdjacentHTML('beforeend', pkmnCard);
-      createPkmnStatsGraph(getPokemonStats(pokemon.stats), pokemon.name);
+      createPkmnStatsChart(getPokemonStats(pokemon.stats), pokemon.name, isInModal);
     } catch (error) {
       console.log(error)
       alert(`There was an error, please try again.`)
