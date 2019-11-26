@@ -16,7 +16,6 @@ import {
 } from './handleFavoritePkmns.js'
 
 export const getPokemon = async (pokemonsToFetch, isInModal) => {
-  resultControlsBtns.classList.remove('results-controls--active');
   for (let i = 0; i < pokemonsToFetch.length; i++) {
     try {
       const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonsToFetch[i]}/`);
@@ -50,8 +49,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
   });
   [...document.querySelectorAll('.pokemon-box__evolutions-image')].forEach(evolutionImage => {
     evolutionImage.addEventListener('click', (e) => {
-      let address = toString(e.currentTarget.src);
-      console.log(toString(e.currentTarget.src).substring(toString(e.currentTarget.src).length() - 3))
+      console.log(e.currentTarget.src)
     })
   })
 };
