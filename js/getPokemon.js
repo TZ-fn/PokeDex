@@ -34,12 +34,20 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       e.stopPropagation();
     })
   });
+
   [...document.querySelectorAll('.pokemon-box')].forEach(box => {
     if (!isInModal) {
       box.addEventListener('click', async e => {
-        await getPokemon([
-          [...e.currentTarget.classList][1]
-        ], true);
+        if (e.target.classList[1] !== e.currentTarget.classList[1] && e.target.classList[1] !== undefined) {
+          await getPokemon([
+            [...e.target.classList][1]
+          ], true);
+        } else {
+
+          await getPokemon([
+            [...e.currentTarget.classList][1]
+          ], true);
+        }
         document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
           let modal = document.querySelector('#pkmnModal');
           modal.parentNode.removeChild(modal);
@@ -47,9 +55,4 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       });
     }
   });
-  [...document.querySelectorAll('.pokemon-box__evolutions-image')].forEach(evolutionImage => {
-    evolutionImage.addEventListener('click', (e) => {
-      console.log(e.currentTarget.src)
-    })
-  })
 };
