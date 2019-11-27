@@ -8,6 +8,11 @@ body {
   font-family: $font-stack;
 }
 
+button:active,
+button:focus {
+  outline: 1px solid $text-color;
+}
+
 .control-buttons__button,
 .results-controls__button,
 .search-form__button,
