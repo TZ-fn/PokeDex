@@ -28,6 +28,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       alert(`There was an error, please try again.`)
     }
   }
+
   [...document.querySelectorAll('.pokemon-box__star-button')].forEach(button => {
     button.addEventListener('click', (e) => {
       handleFavoritePkmns(button);
@@ -43,16 +44,28 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
             [...e.target.classList][1]
           ], true);
         } else {
-
           await getPokemon([
             [...e.currentTarget.classList][1]
           ], true);
         }
-        document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
-          let modal = document.querySelector('#pkmnModal');
-          modal.parentNode.removeChild(modal);
-        });
       });
     }
   });
+
+  if (isInModal) {
+    const modal = document.querySelector('#pkmnModal');
+    document.querySelector('.pokemon-modal__content').addEventListener('click', async e => {
+      if (e.target.classList[1] !== e.currentTarget.classList[1] && e.target.classList[1] !== undefined) {
+        modal.parentNode.removeChild(modal);
+        await getPokemon([
+          [...e.target.classList][1]
+        ], true);
+      }
+    });
+
+    document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
+      modal.parentNode.removeChild(modal);
+    });
+  }
+
 };

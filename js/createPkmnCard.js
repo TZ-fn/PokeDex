@@ -17,7 +17,7 @@ export const createPkmnCard = (pokemon, isInModal) => {
       };
       return `
       ${isInModal ? '<div class="pokemon-modal" id="pkmnModal">':''}
-      <div class="${isInModal? "pokemon-modal__content" :"pokemon-box"} ${pokemon.id}">
+      <div class="${isInModal? "pokemon-modal__content" :"pokemon-box"} ${pokemon.id}" id="pkmnModalContent">
       ${isInModal ? '<button class="pokemon-modal__close-button" id="pkmnModalCloseBtn" aria-label="Close this modal window." title="Close"></button>': ''}
         <button class="pokemon-box__star-button${isPkmnInFavorites(pokemon.name)?' pokemon-box__star-button--active':''}" aria-label="Add this Pokemon to favorites." title="Add to favorites." id="${pokemon.name}">
           <svg viewBox="-2 -2 55 51" class="pokemon-box__star" aria-hidden="true" >
