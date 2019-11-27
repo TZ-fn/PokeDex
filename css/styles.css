@@ -255,11 +255,6 @@ button:focus {
           transform: none;
 }
 
-.pokemon-box__star-button path:hover {
-  fill: yellow;
-  stroke: yellow;
-}
-
 .pokemon-box__star-button--active svg > path {
   fill: yellow;
   stroke: yellow;

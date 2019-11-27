@@ -132,11 +132,6 @@ button:focus {
       transform: none;
     }
 
-    path:hover {
-      fill: yellow;
-      stroke: yellow;
-    }
-
     &--active {
       svg>path {
         fill: yellow;
