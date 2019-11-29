@@ -8,8 +8,10 @@ You can see Pokemons by a list of 8, search Pokemon either by its number or name
 
 ## What problems I had encountered
 Biggest obstacles for me, while coding this project, was working with many, sometimes nested, async requests. I had a function returning `Promise object` instead of actual expected value.
-Another bug I was blocked by, was working with `Array.prototype.map` with async requests inside, luckily I found a good article and used `Promise.all` what made everything working.
-I also had an issue with the statistics graphs rendering, when I only had 1 graph active, every new graph rendered made the other graph disappear. The culprit turned out to be using `element.innerHTML` to created Pokemon cards.
+
+Another bug I was blocked by, was working with `Array.prototype.map` with async requests inside, luckily I found a good [article by Zell Liew](https://zellwk.com/blog/async-await-in-loops/) and used `Promise.all` what made everything working.
+
+I also had an issue with the statistics graphs rendering, when I only had 1 graph active, every new graph rendered made the other graph disappear. Luckily I found [this](https://stackoverflow.com/questions/24621810/html5-canvas-reset-when-adding-to-the-body-with-javascript) question at StackOverflow The culprit turned out to be using `element.innerHTML` to created Pokemon cards.
 `element.innerHTML` cleared all the canvas rendered before, when switching it to `element.insertAdjacentHTML` fixed the problem.
 
 ## Live version
