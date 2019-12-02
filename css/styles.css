@@ -107,10 +107,10 @@ button:focus {
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.control-buttons__button:hover:hover,
-.results-controls__button:hover:hover,
-.search-form__button:hover:hover,
-.pokemon-modal__close-button:hover:hover {
+.control-buttons__button:hover,
+.results-controls__button:hover,
+.search-form__button:hover,
+.pokemon-modal__close-button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   -webkit-transition-duration: 0.2s;
@@ -161,7 +161,6 @@ button:focus {
 .search-form__input {
   border: none;
   min-width: 320px;
-  max-width: 550px;
 }
 
 .search-form__button {
@@ -180,6 +179,7 @@ button:focus {
 }
 
 .control-buttons__button {
+  width: 150px;
   margin: 5px;
 }
 
@@ -187,6 +187,7 @@ button:focus {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin: auto;
+  margin-bottom: 1em;
   background-color: #1a1a1a;
   border: 1px solid black;
   display: -webkit-box;

@@ -48,7 +48,6 @@ window.onload = () => {
   favoritePkmnsBtn.addEventListener('click', () => {
     resultControlsBtns.classList.remove('results-controls--active');
     if (JSON.parse(localStorage.favoritePokemons).length === 0) {
-      results.innerHTML = '';
       alert('No favorite Pokemons added!');
     } else {
       results.innerHTML = '';
