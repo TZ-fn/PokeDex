@@ -221,9 +221,9 @@ button:focus {
       margin: 0;
     }
 
-    &::before {
-      content: 'X';
-    }
+    // &::before {
+    //   content: '×';
+    // }
   }
 
   &__star-button {

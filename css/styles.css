@@ -353,10 +353,6 @@ button:focus {
   margin: 0;
 }
 
-.pokemon-modal__close-button::before {
-  content: 'X';
-}
-
 .pokemon-modal__star-button {
   position: relative;
   top: 25px;
