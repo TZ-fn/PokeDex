@@ -8,9 +8,13 @@ body {
   font-family: $font-stack;
 }
 
-button:active,
 button:focus {
   outline: 1px solid $text-color;
+}
+
+button:active {
+  filter: saturate(125%);
+  outline: 1px solid red;
 }
 
 .control-buttons__button,

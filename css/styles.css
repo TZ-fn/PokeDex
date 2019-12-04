@@ -88,9 +88,14 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-button:active,
 button:focus {
   outline: 1px solid #e6e6e6;
+}
+
+button:active {
+  -webkit-filter: saturate(125%);
+          filter: saturate(125%);
+  outline: 1px solid red;
 }
 
 .control-buttons__button,
