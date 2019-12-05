@@ -28,14 +28,14 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       alert(`There was an error, please try again.`)
     }
   }
-
+  //handle "add to favorites" buttons
   [...document.querySelectorAll('.pokemon-box__star-button')].forEach(button => {
     button.addEventListener('click', (e) => {
       handleFavoritePkmns(button);
       e.stopPropagation();
     })
   });
-
+  //handle showing modal after clicking a Pokemon box
   [...document.querySelectorAll('.pokemon-box')].forEach(box => {
     if (!isInModal) {
       box.addEventListener('click', async e => {
@@ -51,7 +51,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       });
     }
   });
-
+  //handle clicking on Pokemon evolutions in modal window
   if (isInModal) {
     const modal = document.querySelector('#pkmnModal');
     document.querySelector('.pokemon-modal__content').addEventListener('click', async e => {
@@ -62,7 +62,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
         ], true);
       }
     });
-
+    //handle closing the modal
     document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
       modal.parentNode.removeChild(modal);
     });

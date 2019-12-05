@@ -4,7 +4,7 @@ import {
 
 export const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
   let evolutions = [];
-  //Pokemons have evolution chains, unfortunately, the ID of the chain differs from the Pokemon ID
+  //Pokemon have evolution chains, unfortunately, the ID of the chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
     .then(response => response.json())
     .then(response => {
@@ -23,6 +23,7 @@ export const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
     }).then(async _ => {
       //remove current Pokemon from the list of evolutions, fetch images of evolutions and render them in the Pokemon box
       evolutions = evolutions.filter(evolution => evolution !== pokemonName);
+      //fetch evolutions, if there are any
       if (evolutions.length > 0) {
         evolutions = evolutions.map(evolution => {
           return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)

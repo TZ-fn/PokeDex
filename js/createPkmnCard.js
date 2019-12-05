@@ -10,7 +10,7 @@ export const createPkmnCard = (pokemon, isInModal) => {
   return getPokemonEvolutions(pokemon.id, pokemon.name, isInModal)
     .then(evolutions => {
       const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
-      //filter is needed, because Pokemons can have 1 or 2 types, span is added to change type-badge appearance
+      //filter is needed, because Pokemon can have 1 or 2 types, span is added to change type-badge appearance
       const extractPkmnTypes = pokemon => {
         let types = pokemon.types.filter(type => type !== undefined);
         return `${types.map(typeSlot => `<span class="pokemon-box__type-badge pokemon-box__type-badge-${typeSlot.type.name}">${typeSlot.type.name.toUpperCase()}</span>`).join(' ')}`;
