@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .pokemon-box__type-badge {
   border-radius: 5px;
   color: #171717;
@@ -117,10 +118,6 @@ button:active {
 .results-controls__button:hover,
 .search-form__button:hover,
 .pokemon-modal__close-button:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   background-color: #3d3d3d;
 }
 
@@ -362,6 +359,10 @@ button:active {
 .pokemon-modal__close-button:hover {
   padding: 0;
   margin: 0;
+}
+
+.pokemon-modal__close-button::before {
+  content: '×';
 }
 
 .pokemon-modal__star-button {

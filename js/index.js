@@ -25,6 +25,7 @@ window.onload = () => {
   const resultControlsBtns = document.querySelector('#resultControlsBtns');
   const listPrevBtn = document.querySelector('#listPrevBtn');
   const listNextBtn = document.querySelector('#listNextBtn');
+  const pkmnModal = document.querySelector('pkmnModal');
   localStorage.favoritePokemons = JSON.stringify([]);
   //list starts at first 8 Pokemon
   localStorage.listPosition = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8]);

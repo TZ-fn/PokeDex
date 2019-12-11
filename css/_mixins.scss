@@ -11,8 +11,8 @@
 @mixin button-hover {
 
   &:hover {
-    transform: scale(1.02);
-    transition-duration: 0.2s;
+    // transform: scale(1.02);
+    // transition-duration: 0.2s;
     background-color: lighten($lighter-primary-color, 5%);
   }
 }

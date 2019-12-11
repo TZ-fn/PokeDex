@@ -62,6 +62,12 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
         ], true);
       }
     });
+    //close modal when you click outside of it
+    pkmnModal.addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) {
+        modal.parentNode.removeChild(modal);
+      }
+    });
     //handle closing the modal
     document.querySelector('#pkmnModalCloseBtn').addEventListener('click', () => {
       modal.parentNode.removeChild(modal);

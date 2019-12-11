@@ -229,9 +229,9 @@ button:active {
       margin: 0;
     }
 
-    // &::before {
-    //   content: '×';
-    // }
+    &::before {
+      content: '×';
+    }
   }
 
   &__star-button {
