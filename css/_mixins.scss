@@ -1,5 +1,6 @@
 @mixin button {
   border: 1px solid black;
+  cursor: pointer;
   background-color: $lighter-primary-color;
   color: $text-color;
   max-width: 160px;
@@ -8,7 +9,6 @@
 }
 
 @mixin button-hover {
-  // @include button;
 
   &:hover {
     transform: scale(1.02);
