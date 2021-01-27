@@ -119,8 +119,6 @@ button:active {
     padding: 0;
   }
 
-
-
   &__star-button {
     border: none;
     cursor: pointer;
@@ -138,7 +136,7 @@ button:active {
     }
 
     &--active {
-      svg>path {
+      svg > path {
         fill: yellow;
         stroke: yellow;
       }
@@ -152,7 +150,7 @@ button:active {
     width: 150px;
   }
 
-  &>p {
+  & > p {
     margin: 3px;
     text-align: center;
   }
@@ -169,7 +167,6 @@ button:active {
     height: 75px;
     width: 75px;
   }
-
 }
 
 .pokemon-modal {
@@ -227,10 +224,6 @@ button:active {
     &:hover {
       padding: 0;
       margin: 0;
-    }
-
-    &::before {
-      content: '×';
     }
   }
 
