@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PokeDex</title>
+    <meta name="author" content="Tomasz Ziółkowski" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel='icon' href='./assets/favicon/favicon.ico' type='image/x-icon'/ >
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PokeDex</title>
-  <meta name="author" content="Tomasz Ziółkowski">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
-  <link rel="stylesheet" href="./css/styles.css">
-</head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./assets/img/Pokeball.webp"
+          alt="Image of Pokeball"
+        />
+        <h1 class="header__text">PokeDex</h1>
+      </header>
 
-<body>
-  <div class="container">
+      <div class="controls">
+        <form action="" class="search-form">
+          <input
+            type="search"
+            class="search-form__input"
+            placeholder="Search Pokemon by name or number"
+            id="searchBar"
+          />
+          <button
+            class="search-form__button"
+            id="searchBtn"
+            aria-label="Search"
+          >
+            🔍
+          </button>
+        </form>
 
-    <header class="header"><img class="header__logo" src="./assets/img/Pokeball.webp" alt="Image of Pokeball">
-      <h1 class="header__text">PokeDex</h1>
-    </header>
-
-    <div class="controls">
-
-      <form action="" class="search-form">
-        <input type="search" class="search-form__input" placeholder="Search Pokemon by name or number" id="searchBar">
-        <button class="search-form__button" id="searchBtn" aria-label="Search">🔍</button>
-      </form>
-
-      <div class="control-buttons">
-        <button class="control-buttons__button" id="rndPkmnBtn">Random Pokemon</button>
-        <button class="control-buttons__button" id="fourRndmPkmBtn">4 random Pokemons</button>
-        <button class="control-buttons__button" id="favPkmnsBtn">Favourite Pokemons ☆</button>
-        <button class="control-buttons__button" id="pkmnListBtn">Pokemons list</button>
+        <div class="control-buttons">
+          <button class="control-buttons__button" id="rndPkmnBtn">
+            Random Pokemon
+          </button>
+          <button class="control-buttons__button" id="fourRndmPkmBtn">
+            4 random Pokemons
+          </button>
+          <button class="control-buttons__button" id="favPkmnsBtn">
+            Favourite Pokemons ☆
+          </button>
+          <button class="control-buttons__button" id="pkmnListBtn">
+            Pokemons list
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div class="results" id="results">
-    </div>
+      <div class="results" id="results"></div>
 
-    <div class="results-controls" id="resultControlsBtns">
-      <button class="results-controls__button" id="listPrevBtn">Prev</button>
-      <button class="results-controls__button" id="listNextBtn">Next</button>
-    </div>
+      <div class="results-controls" id="resultControlsBtns">
+        <button class="results-controls__button" id="listPrevBtn">Prev</button>
+        <button class="results-controls__button" id="listNextBtn">Next</button>
+      </div>
 
-    <!-- <div class='pokemon-modal' id="pkmnModal">
+      <!-- <div class='pokemon-modal' id="pkmnModal">
       <div class="pokemon-modal__content">
         <button class="pokemon-modal__close-button" id="pkmnModalCloseBtn" aria-label="Close this modal window."
           title="Close">X</button>
@@ -60,10 +102,8 @@
         <div class="pokemon-box__stats"><canvas id="${pokemon.name}-stats"></canvas></div>
       </div>
     </div> -->
-
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-  <script type="module" src="./js/index.js"></script>
-</body>
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>
