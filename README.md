@@ -1,6 +1,6 @@
 # PokeDex
 
-## What I used
+## What technologies I used
 
 Application project using HTML, JavaScript and CSS. I also used [BEM](https://en.bem.info/), [SCSS](https://sass-lang.com/), [Normalize.css](https://necolas.github.io/normalize.css/), [PokeApi](https://pokeapi.co/) and [ChartJS](https://www.chartjs.org/) for displaying each Pokemon statistics in form of a radar graph.
 
