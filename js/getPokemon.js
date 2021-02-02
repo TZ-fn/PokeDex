@@ -38,7 +38,10 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
   [...document.querySelectorAll(".pokemon-box")].forEach((box) => {
     if (!isInModal) {
       box.addEventListener("click", async (e) => {
-        if (e.target.classList[0] === "pokemon-box__type-badge") return;
+        if (e.target.classList[0] === "pokemon-box__type-badge") {
+          await getPokemon([[...e.currentTarget.classList][1]], true);
+          return;
+        }
         if (
           e.target.classList[1] !== e.currentTarget.classList[1] &&
           e.target.classList[1] !== undefined
