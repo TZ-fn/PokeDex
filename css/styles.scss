@@ -60,10 +60,15 @@ button:active {
 .search-form {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   &__input {
     border: none;
-    min-width: 320px;
+    min-width: 270px;
+
+    &::placeholder {
+      font-size: 0.9rem;
+    }
   }
 
   &__button {
@@ -78,7 +83,8 @@ button:active {
   margin: 1rem 1rem;
 
   &__button {
-    padding: 10px 20px;
+    font-size: 0.8rem;
+    padding: 10px 15px;
     margin: 2px;
     border-radius: 2px;
   }
@@ -197,7 +203,7 @@ button:active {
     background-color: $primary-color;
     padding: 1.5rem;
     width: 500px;
-    max-width: 80vw;
+    max-width: 85vw;
     max-height: 85%;
     border-radius: 2px;
     @include shadow-transition;
