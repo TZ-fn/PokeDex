@@ -6,7 +6,7 @@ Application project using HTML, JavaScript and CSS. I also used [BEM](https://en
 
 ## What the app does
 
-You can see Pokemons by a list of 8, search a Pokemon either by its number or name, check a random Pokemon or 4 random Pokemons, you can also save favourite Pokemons using `localstorage`. Each Pokemon card includes more details for each Pokemon (its image, evolutions, type-badges and a graph with its statistics).
+You can see Pokemon by a list of 8, search a Pokemon either by its number or name, check a random Pokemon or 4 random Pokemon, you can also save favourite Pokemon using `localstorage`. Each Pokemon card includes more details for each Pokemon (its image, evolutions, type-badges and a graph with its statistics).
 
 ## What problems I had encountered
 

@@ -11,14 +11,14 @@ window.onload = () => {
   const randomPokemonBtn = document.querySelector("#rndPkmnBtn");
   const fourRndmPokemonBtn = document.querySelector("#fourRndmPkmBtn");
   const results = document.querySelector("#results");
-  const favoritePkmnsBtn = document.querySelector("#favPkmnsBtn");
+  const favoritePkmnBtn = document.querySelector("#favPkmnBtn");
   const searchBtn = document.querySelector("#searchBtn");
   const pkmnListBtn = document.querySelector("#pkmnListBtn");
   const resultControlsBtns = document.querySelector("#resultControlsBtns");
   const listPrevBtn = document.querySelector("#listPrevBtn");
   const listNextBtn = document.querySelector("#listNextBtn");
   const pkmnModal = document.querySelector("pkmnModal");
-  localStorage.favoritePokemons = JSON.stringify([]);
+  localStorage.favoritePokemon = JSON.stringify([]);
   //list starts at first 8 Pokemon
   localStorage.listPosition = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8]);
 
@@ -39,13 +39,13 @@ window.onload = () => {
     getPokemon(randomPokemonNumber(4), false);
   });
 
-  favoritePkmnsBtn.addEventListener("click", () => {
+  favoritePkmnBtn.addEventListener("click", () => {
     resultControlsBtns.classList.remove("results-controls--active");
-    if (JSON.parse(localStorage.favoritePokemons).length === 0) {
-      alert("No favorite Pokemons added!");
+    if (JSON.parse(localStorage.favoritePokemon).length === 0) {
+      alert("No favorite Pokemon added!");
     } else {
       results.innerHTML = "";
-      getPokemon(JSON.parse(localStorage.favoritePokemons), false);
+      getPokemon(JSON.parse(localStorage.favoritePokemon), false);
     }
   });
 

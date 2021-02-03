@@ -2,14 +2,14 @@ import createPkmnCard from "./createPkmnCard.js";
 import { loadingItems } from "./helperFunctions.js";
 import createPkmnStatsChart from "./createPkmnStatsChart.js";
 import getPokemonStats from "./getPokemonStats.js";
-import handleFavoritePkmns from "./handleFavoritePkmns.js";
+import handleFavoritePkmn from "./handleFavoritePkmn.js";
 
-const getPokemon = async (pokemonsToFetch, isInModal) => {
+const getPokemon = async (pokemonToFetch, isInModal) => {
   loadingItems(true);
-  for (let i = 0; i < pokemonsToFetch.length; i++) {
+  for (let i = 0; i < pokemonToFetch.length; i++) {
     try {
       const result = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonsToFetch[i]}/`
+        `https://pokeapi.co/api/v2/pokemon/${pokemonToFetch[i]}/`
       );
       const pokemon = await result.json();
       const pkmnCard = await createPkmnCard(pokemon, isInModal);
@@ -29,7 +29,7 @@ const getPokemon = async (pokemonsToFetch, isInModal) => {
   [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
     (button) => {
       button.addEventListener("click", (e) => {
-        handleFavoritePkmns(button);
+        handleFavoritePkmn(button);
         e.stopPropagation();
       });
     }
