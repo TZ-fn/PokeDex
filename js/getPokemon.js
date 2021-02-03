@@ -11,6 +11,10 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
       const result = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemonToFetch[i]}/`
       );
+      console.log(result.status);
+      if (result.status === 404) {
+        throw new Error("Pokemon not found!");
+      }
       const pokemon = await result.json();
       const pkmnCard = await createPkmnCard(pokemon, isInModal);
       results.insertAdjacentHTML("beforeend", pkmnCard);
@@ -20,8 +24,7 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
         isInModal
       );
     } catch (error) {
-      console.log(error);
-      alert(`There was an error, please try again.`);
+      alert(`Error: Pokemon ${pokemonToFetch[i]} hasn't been found!`);
     }
   }
   loadingItems(false);
