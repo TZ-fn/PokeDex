@@ -128,18 +128,6 @@ button:active {
   height: 80px;
 }
 
-@media (min-width: 540px) {
-  .lds-roller {
-    left: 45vw;
-  }
-}
-
-@media (min-width: 900px) {
-  .lds-roller {
-    left: 47vw;
-  }
-}
-
 .lds-roller div {
   -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
           animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -514,7 +502,7 @@ button:active {
   background-color: #171717;
   padding: 1.5rem;
   width: 500px;
-  max-width: 85vw;
+  max-width: 80vw;
   max-height: 85%;
   border-radius: 2px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
