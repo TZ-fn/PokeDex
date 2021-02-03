@@ -1,4 +1,4 @@
-export const getPokemonStats = pokemonStats => {
+const getPokemonStats = (pokemonStats) => {
   const stats = [];
   //reorder the stats so they are sorted accordingly to the graph axes
   stats[0] = pokemonStats[5].base_stat;
@@ -9,3 +9,5 @@ export const getPokemonStats = pokemonStats => {
   stats[5] = pokemonStats[4].base_stat;
   return stats;
 };
+
+export default getPokemonStats;

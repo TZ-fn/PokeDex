@@ -8,6 +8,17 @@ export const randomPokemonNumber = (howManyPokemons) => {
   return result;
 };
 
-export const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
+export const loadingItems = (isLoading) => {
+  const roller = document.querySelector("#roller");
+  if (isLoading === true) {
+    roller.style.display = "inline-block";
+  } else {
+    roller.style.display = "none";
+  }
+};
 
-export const isPkmnInFavorites = pkmnName => [...JSON.parse(localStorage.favoritePokemons)].includes(pkmnName);
+export const capitalize = (string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
+export const isPkmnInFavorites = (pkmnName) =>
+  [...JSON.parse(localStorage.favoritePokemons)].includes(pkmnName);

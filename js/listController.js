@@ -1,31 +1,30 @@
-import {
-  getPokemon
-} from './getPokemon.js';
+import getPokemon from "./getPokemon.js";
 
-export const listController = (directionOfBrowsing, listPosition) => {
-  results.innerHTML = '';
+const listController = (directionOfBrowsing, listPosition) => {
+  results.innerHTML = "";
   const numberOfPokemonsToFetch = 8;
-  const pokemonsToFetch = listPosition.map(pokemonIndex => {
-    if (directionOfBrowsing === 'default') {
+  const pokemonsToFetch = listPosition.map((pokemonIndex) => {
+    if (directionOfBrowsing === "default") {
       return pokemonIndex;
     }
-    if (directionOfBrowsing === 'forward') {
+    if (directionOfBrowsing === "forward") {
       return pokemonIndex + numberOfPokemonsToFetch;
     }
-    if (directionOfBrowsing === 'backward') {
+    if (directionOfBrowsing === "backward") {
       return pokemonIndex - numberOfPokemonsToFetch;
     }
   });
   localStorage.listPosition = JSON.stringify(pokemonsToFetch);
   getPokemon(pokemonsToFetch, false);
   if (pokemonsToFetch[0] === 1) {
-    listPrevBtn.style.display = 'none';
-
+    listPrevBtn.style.display = "none";
   } else if (pokemonsToFetch[7] === 808) {
-    listNextBtn.style.display = 'none';
+    listNextBtn.style.display = "none";
   } else {
-    listPrevBtn.style.display = 'inline-block';
-    listNextBtn.style.display = 'inline-block';
+    listPrevBtn.style.display = "inline-block";
+    listNextBtn.style.display = "inline-block";
   }
-  resultControlsBtns.classList += ' results-controls--active';
+  resultControlsBtns.classList += " results-controls--active";
 };
+
+export default listController;

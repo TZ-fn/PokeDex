@@ -1,6 +1,6 @@
 import { capitalize } from "./helperFunctions.js";
 
-export const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
+const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
   let evolutions = [];
   //Pokemon have evolution chains, unfortunately, the ID of the evolution chain differs from the Pokemon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
@@ -50,3 +50,5 @@ export const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
       }
     });
 };
+
+export default getPokemonEvolutions;

@@ -1,8 +1,8 @@
-import { getPokemonEvolutions } from './getPokemonEvolutions.js';
+import getPokemonEvolutions from './getPokemonEvolutions.js';
 
 import { isPkmnInFavorites } from './helperFunctions.js';
 
-export const createPkmnCard = (pokemon, isInModal) => {
+const createPkmnCard = (pokemon, isInModal) => {
   return getPokemonEvolutions(pokemon.id, pokemon.name, isInModal).then(
     (evolutions) => {
       const capitalize = (string) =>
@@ -53,3 +53,5 @@ export const createPkmnCard = (pokemon, isInModal) => {
     }
   );
 };
+
+export default createPkmnCard;

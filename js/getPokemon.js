@@ -1,12 +1,11 @@
-import { createPkmnCard } from "./createPkmnCard.js";
+import createPkmnCard from "./createPkmnCard.js";
+import { loadingItems } from "./helperFunctions.js";
+import createPkmnStatsChart from "./createPkmnStatsChart.js";
+import getPokemonStats from "./getPokemonStats.js";
+import handleFavoritePkmns from "./handleFavoritePkmns.js";
 
-import { createPkmnStatsChart } from "./createPkmnStatsChart.js";
-
-import { getPokemonStats } from "./getPokemonStats.js";
-
-import { handleFavoritePkmns } from "./handleFavoritePkmns.js";
-
-export const getPokemon = async (pokemonsToFetch, isInModal) => {
+const getPokemon = async (pokemonsToFetch, isInModal) => {
+  loadingItems(true);
   for (let i = 0; i < pokemonsToFetch.length; i++) {
     try {
       const result = await fetch(
@@ -25,6 +24,7 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       alert(`There was an error, please try again.`);
     }
   }
+  loadingItems(false);
   //handle "add to favorites" buttons
   [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
     (button) => {
@@ -82,3 +82,5 @@ export const getPokemon = async (pokemonsToFetch, isInModal) => {
       });
   }
 };
+
+export default getPokemon;
