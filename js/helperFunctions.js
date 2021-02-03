@@ -10,10 +10,13 @@ export const randomPokemonNumber = (howManyPokemon) => {
 
 export const loadingItems = (isLoading) => {
   const roller = document.querySelector("#roller");
+  const rollerWrapper = document.querySelector("#rollerWrapper");
   if (isLoading === true) {
     roller.style.display = "inline-block";
+    rollerWrapper.style.display = "inline-block";
   } else {
     roller.style.display = "none";
+    rollerWrapper.style.display = "none";
   }
 };
 
