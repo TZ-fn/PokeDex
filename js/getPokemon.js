@@ -7,11 +7,11 @@ import handleFavoritePkmn from "./handleFavoritePkmn.js";
 const getPokemon = async (pokemonToFetch, isInModal) => {
   loadingItems(true);
   for (let i = 0; i < pokemonToFetch.length; i++) {
+    console.log(pokemonToFetch[i]);
     try {
       const result = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemonToFetch[i]}/`
       );
-      console.log(result.status);
       if (result.status === 404) {
         throw new Error("Pokemon not found!");
       }
@@ -24,10 +24,13 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
         isInModal
       );
     } catch (error) {
-      alert(`Error: Pokemon ${pokemonToFetch[i]} hasn't been found!`);
+      alert(
+        `Error: Pokemon ${pokemonToFetch[i]} hasn't been found. Please try again.`
+      );
     }
   }
   loadingItems(false);
+
   //handle "add to favorites" buttons
   [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
     (button) => {
@@ -37,6 +40,7 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
       });
     }
   );
+
   //handle showing modal after clicking a Pokemon box
   [...document.querySelectorAll(".pokemon-box")].forEach((box) => {
     if (!isInModal) {
@@ -56,6 +60,7 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
       });
     }
   });
+
   //handle clicking on Pokemon evolutions in modal window
   if (isInModal) {
     const modal = document.querySelector("#pkmnModal");
@@ -71,12 +76,14 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
           await getPokemon([[...e.target.classList][1]], true);
         }
       });
+
     //close modal when you click outside of it
     pkmnModal.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) {
         modal.parentNode.removeChild(modal);
       }
     });
+
     //handle closing the modal
     document
       .querySelector("#pkmnModalCloseBtn")
