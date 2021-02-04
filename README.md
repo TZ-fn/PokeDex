@@ -20,3 +20,9 @@ I also had an issue with the statistics graphs rendering, when I only had 1 grap
 ## Live version
 
 You can find a live version of the app [here](https://tz-fn.github.io/PokeDex/).
+
+## Known issues
+
+Sometimes the Random Pokemon search will throw an error: "Error: Pokemon `number` hasn't been found. Please try again."
+
+This happens because of the fact that some of the Pokemon have different forms (e.g. [Oricorio](<https://bulbapedia.bulbagarden.net/wiki/Oricorio_(Pok%C3%A9mon)>)) and how the way the API works, searching for `Oricorio` will throw an error but searching for `Oricorio-Baile` will work.
