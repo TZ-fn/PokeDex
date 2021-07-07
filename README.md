@@ -1,6 +1,6 @@
 # PokeDex
 
-![Screenshot of the app](https://github.com/TZ-fn/PokeDex/tree/master/assets/img/app_screenshot.jpg)
+![Screenshot of the app](https://github.com/TZ-fn/NutritiGuide/blob/main/assets/img/app_screenshot.jpg)
 
 ## What technologies I used
 
