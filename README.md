@@ -1,10 +1,10 @@
 # PokeDex
 
-![Screenshot of the app](https://github.com/TZ-fn/PokeDex/tree/master/assets/img/app_screenshot.jpg)
+![Screenshot of the app](https://github.com/TZ-fn/PokeDex/blob/master/assets/img/app_screenshot.jpg)
 
 ## What technologies I used
 
-Application project using HTML, JavaScript and CSS. I also used [BEM](https://en.bem.info/), [SCSS](https://sass-lang.com/), [Normalize.css](https://necolas.github.io/normalize.css/), [PokeApi](https://pokeapi.co/) and [ChartJS](https://www.chartjs.org/) for displaying each Pokemon's statistics in form of a radar graph.
+Application project using HTML, JavaScript and CSS. I also used [BEM](https://en.bem.info/), [SCSS](https://sass-lang.com/), [Normalize.css](https://necolas.github.io/normalize.css/), [PokeApi](https://pokeapi.co/) and [Chart.js](https://www.chartjs.org/) for displaying each Pokemon's statistics in form of a radar graph.
 
 ## What the app does
 
