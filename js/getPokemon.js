@@ -32,18 +32,20 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
   loadingItems(false);
 
   function handleAddingToFavourites(button) {
-    button.addEventListener("click", (e) => {
-      handleFavoritePkmn(button);
-      e.stopPropagation();
-    });
+    handleFavoritePkmn(button);
+    e.stopPropagation();
   }
 
   //handle "add to favorites" buttons
   [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
     (button) => {
       // prevent adding a second event listener when closing the modal window
-      button.removeEventListener("click", handleAddingToFavourites);
-      button.addEventListener("click", handleAddingToFavourites);
+      button.removeEventListener("click", (button) =>
+        handleAddingToFavourites(button)
+      );
+      button.addEventListener("click", (button) =>
+        handleAddingToFavourites(button)
+      );
     }
   );
 
