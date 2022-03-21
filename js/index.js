@@ -39,6 +39,8 @@ window.onload = () => {
     getPokemon(randomPokemonNumber(4), false);
   });
 
+  // prevent adding a double eventListener after closing the modal window
+  favoritePkmnBtn.removeEventListener("click");
   favoritePkmnBtn.addEventListener("click", () => {
     resultControlsBtns.classList.remove("results-controls--active");
     if (JSON.parse(localStorage.favoritePokemon).length === 0) {
