@@ -39,7 +39,7 @@ window.onload = () => {
     getPokemon(randomPokemonNumber(4), false);
   });
 
-  function handleFavouritePkmnBtnClick() {
+  favoritePkmnBtn.addEventListener("click", () => {
     resultControlsBtns.classList.remove("results-controls--active");
     if (JSON.parse(localStorage.favoritePokemon).length === 0) {
       alert("No favorite Pokemon added!");
@@ -47,11 +47,7 @@ window.onload = () => {
       results.innerHTML = "";
       getPokemon(JSON.parse(localStorage.favoritePokemon), false);
     }
-  }
-
-  // prevent adding a double eventListener after closing the modal window
-  favoritePkmnBtn.removeEventListener("click", handleFavouritePkmnBtnClick);
-  favoritePkmnBtn.addEventListener("click", handleFavouritePkmnBtnClick);
+  });
 
   pkmnListBtn.addEventListener("click", () => {
     listController("default", JSON.parse(localStorage.listPosition));
