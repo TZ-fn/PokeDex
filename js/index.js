@@ -1,9 +1,7 @@
 import getPokemon from "./getPokemon.js";
-
 import { randomPokemonNumber } from "./helperFunctions.js";
-
+import handleFavoritePkmn from "./handleFavoritePkmn.js";
 import searchPokemon from "./searchPokemon.js";
-
 import listController from "./listController.js";
 
 window.onload = () => {
@@ -27,25 +25,43 @@ window.onload = () => {
     searchPokemon(searchBar.value);
   });
 
-  randomPokemonBtn.addEventListener("click", () => {
+  randomPokemonBtn.addEventListener("click", async () => {
     results.innerHTML = "";
     resultControlsBtns.classList.remove("results-controls--active");
-    getPokemon(randomPokemonNumber(1), false);
+    await getPokemon(randomPokemonNumber(1), false);
+    [...document.querySelectorAll("#favourites-button")].forEach((button) => {
+      button.addEventListener("click", (e) => {
+        handleFavoritePkmn(e.currentTarget);
+        e.stopPropagation();
+      });
+    });
   });
 
-  fourRndmPokemonBtn.addEventListener("click", () => {
+  fourRndmPokemonBtn.addEventListener("click", async () => {
     results.innerHTML = "";
     resultControlsBtns.classList.remove("results-controls--active");
-    getPokemon(randomPokemonNumber(4), false);
+    await getPokemon(randomPokemonNumber(4), false);
+    [...document.querySelectorAll("#favourites-button")].forEach((button) => {
+      button.addEventListener("click", (e) => {
+        handleFavoritePkmn(e.currentTarget);
+        e.stopPropagation();
+      });
+    });
   });
 
-  favoritePkmnBtn.addEventListener("click", () => {
+  favoritePkmnBtn.addEventListener("click", async () => {
     resultControlsBtns.classList.remove("results-controls--active");
     if (JSON.parse(localStorage.favoritePokemon).length === 0) {
       alert("No favorite Pokemon added!");
     } else {
       results.innerHTML = "";
-      getPokemon(JSON.parse(localStorage.favoritePokemon), false);
+      await getPokemon(JSON.parse(localStorage.favoritePokemon), false);
+      [...document.querySelectorAll("#favourites-button")].forEach((button) => {
+        button.addEventListener("click", (e) => {
+          handleFavoritePkmn(e.currentTarget);
+          e.stopPropagation();
+        });
+      });
     }
   });
 

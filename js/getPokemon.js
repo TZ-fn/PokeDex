@@ -2,12 +2,10 @@ import createPkmnCard from "./createPkmnCard.js";
 import { loadingItems } from "./helperFunctions.js";
 import createPkmnStatsChart from "./createPkmnStatsChart.js";
 import getPokemonStats from "./getPokemonStats.js";
-import handleFavoritePkmn from "./handleFavoritePkmn.js";
 
 const getPokemon = async (pokemonToFetch, isInModal) => {
   loadingItems(true);
   for (let i = 0; i < pokemonToFetch.length; i++) {
-    console.log(pokemonToFetch[i]);
     try {
       const result = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemonToFetch[i]}/`
@@ -29,25 +27,8 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
       );
     }
   }
+
   loadingItems(false);
-
-  function handleAddingToFavourites(button) {
-    handleFavoritePkmn(button);
-    e.stopPropagation();
-  }
-
-  //handle "add to favorites" buttons
-  [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
-    (button) => {
-      // prevent adding a second event listener when closing the modal window
-      button.removeEventListener("click", (button) =>
-        handleAddingToFavourites(button)
-      );
-      button.addEventListener("click", (button) =>
-        handleAddingToFavourites(button)
-      );
-    }
-  );
 
   //handle showing modal after clicking a Pokemon box
   [...document.querySelectorAll(".pokemon-box")].forEach((box) => {
