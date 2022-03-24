@@ -1,12 +1,11 @@
 import getPokemonEvolutions from './getPokemonEvolutions.js';
-
 import { isPkmnInFavorites, capitalize } from './helperFunctions.js';
 
 const createPkmnCard = (pokemon, isInModal) => {
   return getPokemonEvolutions(pokemon.id, pokemon.name, isInModal).then(
     (evolutions) => {
       const extractPkmnTypes = (pokemon) => {
-        //filter function is needed, because Pokemon can have 1 or 2 types, span is added to change type-badge appearance
+        // filter function is needed, because Pokémon can have 1 or 2 types, span is added to change type-badge appearance
         let types = pokemon.types.filter((type) => type !== undefined);
         return `${types
           .map(
@@ -24,7 +23,7 @@ const createPkmnCard = (pokemon, isInModal) => {
             ${isInModal ? '<button class="pokemon-modal__close-button" id="pkmnModalCloseBtn" aria-label="Close this modal window."><span aria-hidden="true">×</span></button>' : ''}
 
 
-            <button id="favourites-button${isInModal ? '-modal' : ''}" class="pokemon-box__star-button${isPkmnInFavorites(pokemon.name) ? ' pokemon-box__star-button--active' : ''}" aria-label="Add this Pokemon to favorites." title="Add to favorites." data-id="${pokemon.name}">
+            <button ${isInModal ? 'id="favourites-button-modal"' : ''}" class="pokemon-box__star-button${isPkmnInFavorites(pokemon.name) ? ' pokemon-box__star-button--active' : ''}" aria-label="Add this Pokémon to favorites." title="Add to favorites." data-id="${pokemon.name}">
               <svg viewBox="-2 -2 55 51" class="pokemon-box__star" aria-hidden="true" >
               <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" stroke="white" stroke-width="3"/>
               </svg>

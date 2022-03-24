@@ -25,43 +25,39 @@ window.onload = () => {
     searchPokemon(searchBar.value);
   });
 
+  function addEventListenersToAddToFavouritesButtons() {
+    [...document.querySelectorAll(".pokemon-box__star-button")].forEach(
+      (button) => {
+        button.addEventListener("click", (e) => {
+          handleFavoritePkmn(e.currentTarget);
+          e.stopPropagation();
+        });
+      }
+    );
+  }
+
   randomPokemonBtn.addEventListener("click", async () => {
     results.innerHTML = "";
     resultControlsBtns.classList.remove("results-controls--active");
     await getPokemon(randomPokemonNumber(1), false);
-    [...document.querySelectorAll("#favourites-button")].forEach((button) => {
-      button.addEventListener("click", (e) => {
-        handleFavoritePkmn(e.currentTarget);
-        e.stopPropagation();
-      });
-    });
+    addEventListenersToAddToFavouritesButtons();
   });
 
   fourRndmPokemonBtn.addEventListener("click", async () => {
     results.innerHTML = "";
     resultControlsBtns.classList.remove("results-controls--active");
     await getPokemon(randomPokemonNumber(4), false);
-    [...document.querySelectorAll("#favourites-button")].forEach((button) => {
-      button.addEventListener("click", (e) => {
-        handleFavoritePkmn(e.currentTarget);
-        e.stopPropagation();
-      });
-    });
+    addEventListenersToAddToFavouritesButtons();
   });
 
   favoritePkmnBtn.addEventListener("click", async () => {
     resultControlsBtns.classList.remove("results-controls--active");
     if (JSON.parse(localStorage.favoritePokemon).length === 0) {
-      alert("No favorite Pokemon added!");
+      alert("No favorite Pokémon added!");
     } else {
       results.innerHTML = "";
       await getPokemon(JSON.parse(localStorage.favoritePokemon), false);
-      [...document.querySelectorAll("#favourites-button")].forEach((button) => {
-        button.addEventListener("click", (e) => {
-          handleFavoritePkmn(e.currentTarget);
-          e.stopPropagation();
-        });
-      });
+      addEventListenersToAddToFavouritesButtons();
     }
   });
 

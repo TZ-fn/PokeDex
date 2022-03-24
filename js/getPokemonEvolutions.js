@@ -2,14 +2,14 @@ import { capitalize } from "./helperFunctions.js";
 
 const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
   let evolutions = [];
-  //Pokemon have evolution chains, unfortunately, the ID of the evolution chain differs from the Pokemon ID
+  // Pokémon have evolution chains, unfortunately, the ID of the evolution chain differs from the Pokémon ID
   return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonID}/`)
     .then((response) => response.json())
     .then((response) => {
       return fetch(`${response.evolution_chain.url}`)
         .then((response) => response.json())
         .then((response) => {
-          //Pokemon have up to 3 forms in a evolution chain, this function extracts name of each form of the Pokemon
+          // Pokémon have up to 3 forms in a evolution chain, this function extracts name of each form of the Pokémon
           evolutions.push(response.chain.species.name);
           if (response.chain.evolves_to[0] !== undefined) {
             evolutions.push(response.chain.evolves_to[0].species.name);
@@ -25,9 +25,9 @@ const getPokemonEvolutions = (pokemonID, pokemonName, isInModal) => {
         });
     })
     .then(async (_) => {
-      //remove current Pokemon from the list of evolutions, fetch images of evolutions and render them in the Pokemon box
+      // remove current Pokémon from the list of evolutions, fetch images of evolutions and render them in the Pokémon box
       evolutions = evolutions.filter((evolution) => evolution !== pokemonName);
-      //fetch evolutions, if there are any
+      // fetch evolutions, if there are any
       if (evolutions.length > 0) {
         evolutions = evolutions.map((evolution) => {
           return fetch(`https://pokeapi.co/api/v2/pokemon/${evolution}/`)

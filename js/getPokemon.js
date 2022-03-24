@@ -2,6 +2,7 @@ import createPkmnCard from "./createPkmnCard.js";
 import { loadingItems } from "./helperFunctions.js";
 import createPkmnStatsChart from "./createPkmnStatsChart.js";
 import getPokemonStats from "./getPokemonStats.js";
+import handleFavoritePkmn from "./handleFavoritePkmn.js";
 
 const getPokemon = async (pokemonToFetch, isInModal) => {
   loadingItems(true);
@@ -30,7 +31,7 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
 
   loadingItems(false);
 
-  //handle showing modal after clicking a Pokemon box
+  // handle showing modal after clicking a Pokemon box
   [...document.querySelectorAll(".pokemon-box")].forEach((box) => {
     if (!isInModal) {
       box.addEventListener("click", async (e) => {
@@ -50,7 +51,7 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
     }
   });
 
-  //handle clicking on Pokemon evolutions in modal window
+  // handle clicking on Pokémon evolutions in modal window
   if (isInModal) {
     const modal = document.querySelector("#pkmnModal");
     document
@@ -66,14 +67,22 @@ const getPokemon = async (pokemonToFetch, isInModal) => {
         }
       });
 
-    //close modal when you click outside of it
+    // add an event listener to the add to favourites button
+    document
+      .querySelector("#favourites-button-modal")
+      .addEventListener("click", (e) => {
+        handleFavoritePkmn(e.currentTarget);
+        e.stopPropagation();
+      });
+
+    // close modal when you click outside of it
     pkmnModal.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) {
         modal.parentNode.removeChild(modal);
       }
     });
 
-    //handle closing the modal
+    // handle closing the modal
     document
       .querySelector("#pkmnModalCloseBtn")
       .addEventListener("click", () => {
