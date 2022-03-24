@@ -11,59 +11,59 @@
 }
 
 .pokemon-box__type-badge-normal {
-  background-color: #95956A;
+  background-color: #95956a;
 }
 
 .pokemon-box__type-badge-fire {
-  background-color: #F07F30;
+  background-color: #f07f30;
 }
 
 .pokemon-box__type-badge-fighting {
-  background-color: #C03028;
+  background-color: #c03028;
 }
 
 .pokemon-box__type-badge-water {
-  background-color: #6890EF;
+  background-color: #6890ef;
 }
 
 .pokemon-box__type-badge-flying {
-  background-color: #A890F0;
+  background-color: #a890f0;
 }
 
 .pokemon-box__type-badge-grass {
-  background-color: #78C850;
+  background-color: #78c850;
 }
 
 .pokemon-box__type-badge-poison {
-  background-color: #A040A0;
+  background-color: #a040a0;
 }
 
 .pokemon-box__type-badge-electric {
-  background-color: #F8D030;
+  background-color: #f8d030;
 }
 
 .pokemon-box__type-badge-ground {
-  background-color: #E0C068;
+  background-color: #e0c068;
 }
 
 .pokemon-box__type-badge-psychic {
-  background-color: #F85888;
+  background-color: #f85888;
 }
 
 .pokemon-box__type-badge-rock {
-  background-color: #B8A038;
+  background-color: #b8a038;
 }
 
 .pokemon-box__type-badge-ice {
-  background-color: #98D8D8;
+  background-color: #98d8d8;
 }
 
 .pokemon-box__type-badge-bug {
-  background-color: #A8B820;
+  background-color: #a8b820;
 }
 
 .pokemon-box__type-badge-dragon {
-  background-color: #7039F8;
+  background-color: #7039f8;
 }
 
 .pokemon-box__type-badge-ghost {
@@ -75,11 +75,11 @@
 }
 
 .pokemon-box__type-badge-steel {
-  background-color: #B8B8D0;
+  background-color: #b8b8d0;
 }
 
 .pokemon-box__type-badge-fairy {
-  background-color: #EE99AC;
+  background-color: #ee99ac;
 }
 
 html {
@@ -90,7 +90,8 @@ html {
 body {
   background-color: #171717;
   color: #e6e6e6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
   padding: 0;
 }
@@ -101,7 +102,7 @@ button:focus {
 
 button:active {
   -webkit-filter: saturate(125%);
-          filter: saturate(125%);
+  filter: saturate(125%);
   outline: 1px solid red;
 }
 
@@ -123,16 +124,16 @@ button:active {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
 }
 
 .lds-roller div {
   -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   -webkit-transform-origin: 40px 40px;
-          transform-origin: 40px 40px;
+  transform-origin: 40px 40px;
 }
 
 .lds-roller div:after {
@@ -148,7 +149,7 @@ button:active {
 
 .lds-roller div:nth-child(1) {
   -webkit-animation-delay: -0.036s;
-          animation-delay: -0.036s;
+  animation-delay: -0.036s;
 }
 
 .lds-roller div:nth-child(1):after {
@@ -158,7 +159,7 @@ button:active {
 
 .lds-roller div:nth-child(2) {
   -webkit-animation-delay: -0.072s;
-          animation-delay: -0.072s;
+  animation-delay: -0.072s;
 }
 
 .lds-roller div:nth-child(2):after {
@@ -168,7 +169,7 @@ button:active {
 
 .lds-roller div:nth-child(3) {
   -webkit-animation-delay: -0.108s;
-          animation-delay: -0.108s;
+  animation-delay: -0.108s;
 }
 
 .lds-roller div:nth-child(3):after {
@@ -178,7 +179,7 @@ button:active {
 
 .lds-roller div:nth-child(4) {
   -webkit-animation-delay: -0.144s;
-          animation-delay: -0.144s;
+  animation-delay: -0.144s;
 }
 
 .lds-roller div:nth-child(4):after {
@@ -188,7 +189,7 @@ button:active {
 
 .lds-roller div:nth-child(5) {
   -webkit-animation-delay: -0.18s;
-          animation-delay: -0.18s;
+  animation-delay: -0.18s;
 }
 
 .lds-roller div:nth-child(5):after {
@@ -198,7 +199,7 @@ button:active {
 
 .lds-roller div:nth-child(6) {
   -webkit-animation-delay: -0.216s;
-          animation-delay: -0.216s;
+  animation-delay: -0.216s;
 }
 
 .lds-roller div:nth-child(6):after {
@@ -208,7 +209,7 @@ button:active {
 
 .lds-roller div:nth-child(7) {
   -webkit-animation-delay: -0.252s;
-          animation-delay: -0.252s;
+  animation-delay: -0.252s;
 }
 
 .lds-roller div:nth-child(7):after {
@@ -218,7 +219,7 @@ button:active {
 
 .lds-roller div:nth-child(8) {
   -webkit-animation-delay: -0.288s;
-          animation-delay: -0.288s;
+  animation-delay: -0.288s;
 }
 
 .lds-roller div:nth-child(8):after {
@@ -229,22 +230,22 @@ button:active {
 @-webkit-keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -259,8 +260,9 @@ button:active {
   max-width: 160px;
   padding: 10px;
   border-radius: 2px;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .control-buttons__button:hover,
@@ -278,8 +280,9 @@ button:active {
   max-width: 160px;
   padding: 10px;
   border-radius: 2px;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   cursor: auto;
 }
 
@@ -306,11 +309,11 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .search-form__input {
@@ -344,8 +347,8 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 1rem 1rem;
 }
 
@@ -363,8 +366,9 @@ button:active {
 }
 
 .results {
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin: auto;
   margin-bottom: 1em;
   background-color: #1a1a1a;
@@ -374,20 +378,20 @@ button:active {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: min-content;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 80vw;
-  padding: 0.5rem 1rem;
 }
 
 .pokemon-box {
@@ -397,15 +401,17 @@ button:active {
   padding-bottom: 1rem;
   background-color: #171717;
   cursor: pointer;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .pokemon-box:hover {
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .pokemon-box__name {
@@ -431,7 +437,7 @@ button:active {
 .pokemon-box__star-button:hover {
   background-color: transparent;
   -webkit-transform: none;
-          transform: none;
+  transform: none;
 }
 
 .pokemon-box__star-button--active svg > path {
@@ -445,11 +451,11 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .pokemon-box__image {
@@ -468,11 +474,11 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 75px;
 }
 
@@ -492,13 +498,14 @@ button:active {
 }
 
 .pokemon-modal__content {
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #171717;
   padding: 1.5rem;
   width: 500px;
@@ -510,8 +517,9 @@ button:active {
 }
 
 .pokemon-modal__content:hover {
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .pokemon-modal__image {
@@ -553,11 +561,11 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100px;
 }
 
@@ -581,7 +589,7 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */
